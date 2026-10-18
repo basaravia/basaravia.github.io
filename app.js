@@ -34,6 +34,7 @@ const galleryLabels = {
   clase: { es: "Clase", en: "Class" },
   evento: { es: "Evento", en: "Event" },
   proyecto: { es: "Proyecto", en: "Project" },
+  personal: { es: "Fuera del código", en: "Off the clock" },
 };
 
 function galleryItem(item) {

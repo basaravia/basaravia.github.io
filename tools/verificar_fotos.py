@@ -57,7 +57,8 @@ def main(paths):
                 if kind != "teléfono" or (sum(c.isdigit() for c in m.group(0)) >= 8
                                           and not re.fullmatch(r"(19|20)\d\d\s*-\s*(19|20)\d\d", m.group(0)))]
         alerts += bool(hits)
-        name = Path(result["file"]).relative_to(ROOT) if Path(result["file"]).is_absolute() else result["file"]
+        path = Path(result["file"])
+        name = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
         print(f"{'ALERTA' if hits else 'ok    '} {name}  rostros={len(result['faces'])}  textos={len(result['text'])}")
         for hit in hits:
             print(f"         {hit}")

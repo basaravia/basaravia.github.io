@@ -56,6 +56,15 @@ window.SITE_CONTENT = {
     foto("assets/img/charlas/2026-08-python-quito-ciberseguridad-agentica.webp", "charla", "2026-08", "Taller de ciberseguridad agéntica (OWASP)", "Agentic cybersecurity workshop (OWASP)", "Python Quito", true),
     foto("assets/img/charlas/2026-08-python-quito-ponentes.webp", "charla", "2026-08", "Ponentes del taller", "Workshop speakers", "Python Quito"),
     foto("assets/img/eventos/2026-08-python-quito-grupal.webp", "evento", "2026-08", "Comunidad Python Quito", "Python Quito community", "Python Quito", true),
-  ],
+    // Fuera del código (lugares genéricos a propósito: nada de rutas ni puntos de partida)
+    foto("assets/img/personal/2022-12-lagunas-mojanda.webp", "personal", "2022-12", "Páramo de Mojanda", "Mojanda highlands", "Andes · Ecuador"),
+    foto("assets/img/personal/2023-09-cascada-andina.webp", "personal", "2023-09", "Bajo la cascada", "Under the waterfall", "Andes · Ecuador"),
+    foto("assets/img/personal/2025-06-xc-cotopaxi.webp", "personal", "2025-06", "XC en el páramo", "XC on the páramo", "Cotopaxi", true),
+    foto("assets/img/personal/2026-05-bosque-polylepis.webp", "personal", "2026-05", "Bosque de polylepis", "Polylepis forest", "Andes · Ecuador"),
+    foto("assets/img/personal/2026-05-saratoga-en-vivo.webp", "personal", "2026-05", "Saratoga en vivo", "Saratoga live", "Metal"),
+    foto("assets/img/personal/2026-06-arenal-cotopaxi.webp", "personal", "2026-06", "Al pie del glaciar", "Below the glacier", "Cotopaxi"),
+    foto("assets/img/personal/2026-07-offroad-antisana.webp", "personal", "2026-07", "Off-road frente al Antisana", "Off-road facing Antisana", "Antisana"),
+    foto("assets/img/personal/2026-10-roy-khan-en-vivo.webp", "personal", "2026-10", "Roy Khan en vivo", "Roy Khan live", "Metal", true),
+  ].sort((a, b) => a.fecha.localeCompare(b.fecha)),
   notas: [],
 };

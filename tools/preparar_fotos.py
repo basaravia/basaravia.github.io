@@ -28,7 +28,7 @@ IMG = ROOT / "assets" / "img"
 MAX_SIDE = 1600
 PORTRAIT_SIDE = 800  # un retrato en alta resolución es materia prima para deepfakes
 WATERMARK = "aisaravia.online"
-KINDS = {"charlas", "clases", "eventos", "blog", "proyectos", "retrato"}
+KINDS = {"charlas", "clases", "eventos", "blog", "proyectos", "retrato", "personal"}
 
 
 def approved():

@@ -37,3 +37,12 @@ charlas/2026-08-python-quito-ponentes.webp
 eventos/2026-08-python-quito-grupal.webp
 # Retrato del inicio (pedido por Alexander el 2026-10-18):
 retrato/alexander-saravia.webp
+# Fotos personales (revisión del guardián del 2026-10-18, aprobadas por Alexander):
+personal/2022-12-lagunas-mojanda.webp
+personal/2023-09-cascada-andina.webp
+personal/2025-06-xc-cotopaxi.webp
+personal/2026-05-bosque-polylepis.webp
+personal/2026-05-saratoga-en-vivo.webp
+personal/2026-06-arenal-cotopaxi.webp
+personal/2026-07-offroad-antisana.webp
+personal/2026-10-roy-khan-en-vivo.webp
