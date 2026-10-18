@@ -82,11 +82,15 @@ function renderGallery() {
 }
 
 // Respaldo del efecto "portal" para navegadores sin animaciones ligadas al scroll (CSS view()).
-const supportsScrollTimeline = CSS.supports?.("animation-timeline: view()");
+// Igual que en styles.css: los efectos ligados al scroll solo corren en escritorio con mouse.
+const supportsScrollTimeline = CSS.supports?.("animation-timeline: view()")
+  && matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1101px)").matches;
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
 function observeTimeline(container) {
-  if (supportsScrollTimeline || reducedMotion.matches || !("IntersectionObserver" in window)) return;
+  // En pantallas táctiles (iPad, celular) las fotos quedan siempre visibles: sin animación de entrada.
+  const desktop = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!desktop || supportsScrollTimeline || reducedMotion.matches || !("IntersectionObserver" in window)) return;
   document.documentElement.classList.add("motion-fallback");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
