@@ -52,11 +52,15 @@ function galleryItem(item) {
 
 function renderGallery() {
   document.querySelectorAll("[data-gallery]").forEach((container) => {
-    const featuredOnly = container.dataset.gallery === "destacadas";
-    const items = content.galeria.filter((item) => !featuredOnly || item.destacada);
+    const mode = container.dataset.gallery;
+    const featuredOnly = mode === "destacadas";
+    // Las fotos personales viven solo en "Fuera del código"; la línea de tiempo y la portada son profesionales.
+    const items = content.galeria.filter((item) => mode === "personal"
+      ? item.tipo === "personal"
+      : item.tipo !== "personal" && (!featuredOnly || item.destacada));
     const section = container.closest("[data-gallery-section]");
     if (section) section.hidden = items.length === 0;
-    if (featuredOnly) {
+    if (featuredOnly || mode === "personal") {
       container.innerHTML = items.map(galleryItem).join("");
       return;
     }

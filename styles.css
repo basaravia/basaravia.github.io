@@ -626,3 +626,12 @@ h2 em { color: var(--mint); font-style: normal; }
   .hero-role { flex-wrap: wrap; row-gap: 4px; }
   .role-loc { flex-basis: 100%; color: var(--muted); }
 }
+
+/* Galería "Fuera del código": separada de la línea de tiempo profesional */
+.off-gallery { margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--line); }
+.off-gallery-note { margin: 0; color: var(--muted); font-size: 14px; }
+.off-gallery-grid { grid-template-columns: repeat(4, 1fr); }
+.off-gallery-grid .gallery-item figcaption { padding: 10px 12px 12px; }
+.off-gallery-grid .gallery-kind { display: none; }
+@media (max-width: 980px) { .off-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 680px) { .off-gallery { margin-top: 44px; } .off-gallery-grid { gap: 10px; } .off-gallery-grid .gallery-item figcaption strong { font-size: 12.5px; } }
