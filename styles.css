@@ -563,10 +563,14 @@ h2 em { color: var(--mint); font-style: normal; }
   .hero-proof { animation-delay: .32s; }
   .hero-visual { animation-delay: .1s; }
   .code-chip { animation-delay: .45s; }
+  /* El editor aparece y desaparece en ciclo para dejar ver la foto completa; se queda fijo al pasar el cursor */
+  .hero-visual .code-chip { animation: rise .7s var(--ease) .45s both, chip-cycle 13s ease-in-out 5s infinite; }
+  .hero-visual:hover .code-chip { animation-play-state: paused; }
 }
 @keyframes vt-out { to { opacity: 0; translate: 0 -8px; } }
 @keyframes vt-in { from { opacity: 0; translate: 0 12px; } }
 @keyframes rise { from { opacity: 0; translate: 0 18px; } }
+@keyframes chip-cycle { 0%, 58% { opacity: 1; translate: 0 0; filter: blur(0); } 64%, 94% { opacity: 0; translate: 0 14px; filter: blur(4px); } 100% { opacity: 1; translate: 0 0; filter: blur(0); } }
 
 /* Tarjetas: halo que sigue al cursor (las coordenadas las pone app.js) */
 .spotlight { position: relative; }
