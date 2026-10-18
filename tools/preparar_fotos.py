@@ -5,6 +5,7 @@ Uso:
   python tools/preparar_fotos.py fotos_entrada/IMG_1234.HEIC charlas/2026-python-quito-owasp
   python tools/preparar_fotos.py foto.HEIC eventos/2024-dama --recortar 0,0.1,1,0.9 --ocultar 0.6,0.2,0.9,0.4
   python tools/preparar_fotos.py foto.HEIC --previa /tmp/previa.jpg     # vista con cuadrícula, no publica
+  python tools/preparar_fotos.py foto.HEIC retrato/x --margen-superior 0.12  # aire sobre la cabeza
 
 Las coordenadas son fracciones del ancho y del alto (x0,y0,x1,y1, de 0 a 1) sobre la foto ya girada.
 --recortar se aplica primero; las zonas de --ocultar se miden sobre el resultado del recorte y se
@@ -65,6 +66,17 @@ def hide(image, area):
     image.paste(small.resize(patch.size, Image.NEAREST).filter(ImageFilter.GaussianBlur(block // 2)), box)
 
 
+def headroom(image, fraction):
+    """Agrega aire arriba con el color del borde superior, fundido hacia la foto (para selfies muy justas)."""
+    extra = int(image.height * fraction)
+    band = image.crop((0, 0, image.width, max(1, image.height // 40))).resize((1, 1), Image.BOX).getpixel((0, 0))
+    canvas = Image.new("RGB", (image.width, image.height + extra), band)
+    canvas.paste(image, (0, extra))
+    fade = Image.linear_gradient("L").resize((image.width, extra * 2))
+    canvas.paste(Image.new("RGB", (image.width, extra * 2), band), (0, extra // 2), fade.transpose(Image.FLIP_TOP_BOTTOM).point(lambda v: v * 0.9))
+    return canvas
+
+
 def grid(image):
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default(size=max(14, image.width // 50))
@@ -92,6 +104,7 @@ def main():
     parser.add_argument("target", nargs="?")
     parser.add_argument("--recortar", type=region)
     parser.add_argument("--ocultar", type=region, action="append", default=[])
+    parser.add_argument("--margen-superior", type=float, default=0, help="fracción de alto a agregar sobre la foto (0-0.3)")
     parser.add_argument("--previa", help="escribe una vista con cuadrícula en esta ruta (fuera del repo) y no publica")
     args = parser.parse_args()
 
@@ -100,6 +113,8 @@ def main():
         image = image.crop(pixels(image, args.recortar))
     for area in args.ocultar:
         hide(image, area)
+    if args.margen_superior:
+        image = headroom(image, min(args.margen_superior, 0.3))
     image.thumbnail((MAX_SIDE, MAX_SIDE))
 
     if args.previa:
