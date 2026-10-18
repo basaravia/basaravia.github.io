@@ -3,3 +3,10 @@ fotos_entrada/
 _site/
 .venv/
 .DS_Store
+# En assets/img solo entran las .webp procesadas: nunca originales (traen GPS y datos del teléfono)
+*.[hH][eE][iI][cC]
+*.[hH][eE][iI][fF]
+assets/img/**/*.[jJ][pP][gG]
+assets/img/**/*.[jJ][pP][eE][gG]
+assets/img/**/*.[pP][nN][gG]
+*.[mM][oO][vV]
