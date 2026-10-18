@@ -1,0 +1,37 @@
+# Fotos aprobadas por Alexander para publicarse (una por línea, ruta dentro de assets/img/).
+# Solo se agrega una línea después de revisar la foto con el guardián de marca.
+# Ejemplo: charlas/2026-python-quito-owasp.webp
+# Revisión del 2026-10-18 (aprobada por Alexander):
+proyectos/2019-08-robot-maker.webp
+proyectos/2020-01-estacion-iot-espe.webp
+eventos/2020-06-comunidad-grupal.webp
+eventos/2021-03-reconocimiento-emprendimiento-espe.webp
+proyectos/2021-05-laboratorio-edge-ai.webp
+proyectos/2021-10-prueba-campo-realsense.webp
+charlas/2022-05-nuo-charla.webp
+clases/2022-07-clase-iot-en-linea.webp
+charlas/2023-02-epn-camino-ciencia-datos.webp
+eventos/2023-04-open-data-day-panel.webp
+clases/2023-06-pizarra-ciencia-datos.webp
+clases/2023-06-aula.webp
+clases/2023-06-aforo.webp
+eventos/2023-10-startup-weekend-mentor.webp
+eventos/2023-10-startup-weekend-mentores.webp
+eventos/2023-10-techstars-startup-weekend-espe.webp
+charlas/2023-11-ingenieriag-grupo.webp
+charlas/2023-11-ia-jovenes-profesionales.webp
+clases/2024-03-kruger-open-lab.webp
+eventos/2024-06-comunidad-camisetas.webp
+eventos/2024-07-gen-ai-day.webp
+charlas/2024-07-gen-ai-day-escenario.webp
+eventos/2024-09-dama-ecuador.webp
+eventos/2024-12-entrega-certificados.webp
+eventos/2024-12-reconocimiento-trofeos.webp
+eventos/2024-12-reconocimiento-saturdays-ai.webp
+clases/2025-02-puce-taller.webp
+charlas/2025-02-puce-gobierno-ia.webp
+eventos/2025-10-aws-community-day.webp
+eventos/2026-04-google-evento.webp
+charlas/2026-08-python-quito-ciberseguridad-agentica.webp
+charlas/2026-08-python-quito-ponentes.webp
+eventos/2026-08-python-quito-grupal.webp

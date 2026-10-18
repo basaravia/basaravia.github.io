@@ -1,0 +1,5 @@
+# Fotos originales: nunca se suben al repo público
+fotos_entrada/
+_site/
+.venv/
+.DS_Store

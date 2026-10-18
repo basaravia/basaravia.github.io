@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-root="">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="robots" content="noimageai">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#080b10">
-    <meta name="description" content="Alexander Saravia — Principal AI Architect. Diseño y construyo sistemas de IA que llevan ideas a producción, con arquitectura y confianza.">
-    <meta property="og:title" content="Alexander Saravia — AI Architect & Maker">
-    <meta property="og:description" content="Arquitectura de IA, sistemas agénticos y experimentos maker. De la idea a producción, con intención.">
+    <meta name="description" content="Alexander Saravia — Tech Lead y Principal AI Architect. Llevo la IA generativa y agéntica del prototipo a producción, con arquitectura, gobierno y seguridad por diseño.">
+    <meta property="og:title" content="Alexander Saravia — Tech Lead & Principal AI Architect">
+    <meta property="og:description" content="IA generativa y agéntica en producción a escala nacional. Arquitectura, gobierno y seguridad de IA. FELABAN 2026, 1.er lugar LatAm.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aisaravia.online/">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://aisaravia.online/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -17,6 +23,7 @@
         "name": "Alexander Saravia",
         "url": "https://aisaravia.online/",
         "jobTitle": "Principal AI Architect",
+        "award": "FELABAN Digital Innovation Award 2026 — Innovation with AI, 1st place in Latin America",
         "sameAs": [
           "https://github.com/basaravia",
           "https://www.linkedin.com/in/asaravia/"
@@ -27,14 +34,18 @@
           "Agentic AI",
           "Enterprise Architecture",
           "AI Governance",
+          "AI Security",
           "Edge AI"
         ]
       }
     </script>
-    <title>Alexander Saravia — AI Architect & Maker</title>
+    <title data-es="Alexander Saravia — Tech Lead y Arquitecto de IA" data-en="Alexander Saravia — Tech Lead & AI Architect">Alexander Saravia — Tech Lead y Arquitecto de IA</title>
     <link rel="canonical" href="https://aisaravia.online/">
+    <link rel="me" href="https://www.linkedin.com/in/asaravia/">
+    <link rel="me" href="https://github.com/basaravia">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script src="data/contenido.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -43,36 +54,37 @@
       <header class="topbar">
         <a class="wordmark" href="#top" aria-label="Alexander Saravia, inicio">
           <span class="wordmark-mark">a<span>.</span>s</span>
-          <span class="wordmark-label">AI / ARCHITECTURE / MAKER</span>
+          <span class="wordmark-label">TECH LEAD / AI ARCHITECTURE</span>
         </a>
         <nav class="main-nav" aria-label="Navegación principal">
           <a href="#work" data-es="Trabajo" data-en="Work">Trabajo</a>
-          <a href="#lab" data-es="Laboratorio" data-en="Lab">Laboratorio</a>
+          <a href="trayectoria.html" data-es="Trayectoria" data-en="Track record">Trayectoria</a>
+          <a href="#speaking" data-es="Charlas" data-en="Speaking">Charlas</a>
           <a href="#about" data-es="Acerca de" data-en="About">Acerca de</a>
         </nav>
         <div class="top-actions">
           <button class="language-toggle" type="button" aria-label="Switch language">EN</button>
-          <a class="availability" href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noreferrer">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span data-es="Disponible para conversar" data-en="Open to conversations">Disponible para conversar</span>
-          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn"><svg aria-hidden="true"><use href="assets/icons.svg#linkedin"/></svg></a>
+          <a class="icon-link" href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer me" aria-label="GitHub"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg></a>
         </div>
       </header>
 
       <main id="main">
         <section class="hero section-wrap" id="top">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-line"></span><span data-es="Quito, Ecuador · trabajando en toda LatAm" data-en="Quito, Ecuador · building across LatAm">Quito, Ecuador · trabajando en toda LatAm</span></p>
+            <p class="eyebrow"><span class="eyebrow-line"></span><span data-es="Tech Lead · Principal AI Architect · Quito, Ecuador" data-en="Tech Lead · Principal AI Architect · Quito, Ecuador">Tech Lead · Principal AI Architect · Quito, Ecuador</span></p>
             <h1><span data-es="Diseño inteligencia." data-en="I design intelligence.">Diseño inteligencia.</span><br><span class="headline-accent" data-es="La construyo para el mundo real." data-en="I build it for the real world.">La construyo para el mundo real.</span></h1>
-            <p class="hero-intro" data-es="Soy Alexander: arquitecto de IA, estratega y maker. Conecto visión de negocio, sistemas agénticos y manos en el código para llevar ideas ambiciosas a producción — con valor, criterio y confianza." data-en="I'm Alexander: AI architect, strategist, and maker. I connect business vision, agentic systems, and hands-on engineering to take ambitious ideas to production—with value, rigor, and trust.">Soy Alexander: arquitecto de IA, estratega y maker. Conecto visión de negocio, sistemas agénticos y manos en el código para llevar ideas ambiciosas a producción — con valor, criterio y confianza.</p>
+            <p class="hero-intro" data-es="Llevo la IA generativa y agéntica del prototipo a producción a escala nacional, y diseño la arquitectura y el gobierno que le permiten crecer con seguridad en toda la organización. Estrategia, arquitectura y código en la misma conversación." data-en="I take generative and agentic AI from prototype to production at national scale, and design the architecture and governance that let it grow safely across a business. Strategy, architecture, and code in the same conversation.">Llevo la IA generativa y agéntica del prototipo a producción a escala nacional, y diseño la arquitectura y el gobierno que le permiten crecer con seguridad en toda la organización. Estrategia, arquitectura y código en la misma conversación.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#work"><span data-es="Explorar mi trabajo" data-en="Explore my work">Explorar mi trabajo</span><span aria-hidden="true">↘</span></a>
-              <button class="text-button" id="open-terminal" type="button"><span class="prompt-symbol" aria-hidden="true">&gt;_</span><span data-es="Abrir terminal" data-en="Open terminal">Abrir terminal</span></button>
+              <a class="button button-primary" href="caso-agente.html"><span data-es="Ver el caso destacado" data-en="See the featured case">Ver el caso destacado</span><span aria-hidden="true">→</span></a>
+              <a class="button button-ghost" href="trayectoria.html"><span data-es="Trayectoria completa" data-en="Full track record">Trayectoria completa</span></a>
+              <button class="text-button" id="open-terminal" type="button"><span class="prompt-symbol" aria-hidden="true">&gt;_</span><span data-es="Terminal" data-en="Terminal">Terminal</span></button>
             </div>
-            <div class="hero-proof">
-              <span class="proof-award" aria-hidden="true">✳</span>
-              <p><strong data-es="FELABAN 2026 · 1.er lugar LatAm" data-en="FELABAN 2026 · 1st place in LatAm">FELABAN 2026 · 1.er lugar LatAm</strong><br><span data-es="Innovación con IA" data-en="Innovation with AI">Innovación con IA</span></p>
-            </div>
+            <ul class="hero-proof" aria-label="Credenciales">
+              <li><span class="proof-award" aria-hidden="true">✳</span><p><strong data-es="FELABAN 2026 · 1.er lugar LatAm" data-en="FELABAN 2026 · 1st in LatAm">FELABAN 2026 · 1.er lugar LatAm</strong><br><span data-es="Innovación con IA" data-en="Innovation with AI">Innovación con IA</span></p></li>
+              <li><span class="proof-award" aria-hidden="true"><svg><use href="assets/icons.svg#ieee"/></svg></span><p><strong data-es="2 publicaciones IEEE" data-en="2 IEEE papers">2 publicaciones IEEE</strong><br><span data-es="Deep learning aplicado" data-en="Applied deep learning">Deep learning aplicado</span></p></li>
+              <li><span class="proof-award" aria-hidden="true">◇</span><p><strong data-es="Patente publicada" data-en="Published patent">Patente publicada</strong><br><span data-es="Edge AI con visión 3D" data-en="Edge AI with 3D vision">Edge AI con visión 3D</span></p></li>
+            </ul>
           </div>
 
           <div class="editor-card" aria-label="Fragmento de perfil de Alexander">
@@ -82,35 +94,56 @@
               <span class="editor-kebab" aria-hidden="true">···</span>
             </div>
             <div class="editor-body">
-              <div class="editor-gutter" aria-hidden="true">01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14</div>
+              <div class="editor-gutter" aria-hidden="true">01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14<br>15</div>
               <pre><code><span class="code-purple">const</span> <span class="code-blue">alexander</span> = {
-  <span class="code-cyan">role</span>: <span class="code-green">"Principal AI Architect"</span>,
+  <span class="code-cyan">role</span>: <span class="code-green">"Tech Lead · AI Architect"</span>,
   <span class="code-cyan">focus</span>: [
     <span class="code-green">"Generative &amp; Agentic AI"</span>,
     <span class="code-green">"Enterprise architecture"</span>,
-    <span class="code-green">"Responsible AI"</span>,
+    <span class="code-green">"AI governance &amp; security"</span>,
   ],
-  <span class="code-cyan">mindset</span>: <span class="code-green">"builder"</span>,
   <span class="code-cyan">from</span>: <span class="code-green">"prototype"</span>,
   <span class="code-cyan">to</span>: <span class="code-green">"production"</span>,
-  <span class="code-cyan">with</span>: <span class="code-green">"purpose"</span>,
+  <span class="code-cyan">offHours</span>: [<span class="code-green">"metal"</span>, <span class="code-green">"XC off-road"</span>],
   <span class="code-cyan">status</span>: <span class="code-orange">"building"</span>,
 };
 
 <span class="code-purple">export default</span> alexander;<span class="cursor" aria-hidden="true"></span></code></pre>
             </div>
             <div class="editor-status">
-              <span><span class="status-dot" aria-hidden="true"></span> <span data-es="Listo para construir" data-en="Ready to build">Listo para construir</span></span>
+              <span><span class="status-dot" aria-hidden="true"></span> <span data-es="Compilado sin errores" data-en="Compiled with no errors">Compilado sin errores</span></span>
               <span>UTF-8&nbsp; · &nbsp;TypeScript</span>
             </div>
             <div class="editor-glow" aria-hidden="true"></div>
           </div>
-          <div class="hero-index" aria-hidden="true">01 <span>—</span> 04</div>
         </section>
 
-        <section class="signal-strip" aria-label="Áreas de especialidad">
-          <div class="signal-track">
-            <span>GENERATIVE AI</span><i>✳</i><span>AGENTIC SYSTEMS</span><i>✳</i><span>AI ARCHITECTURE</span><i>✳</i><span>RESPONSIBLE AI</span><i>✳</i><span>EDGE AI</span><i>✳</i><span>GENERATIVE AI</span><i>✳</i><span>AGENTIC SYSTEMS</span><i>✳</i><span>AI ARCHITECTURE</span><i>✳</i><span>RESPONSIBLE AI</span><i>✳</i><span>EDGE AI</span><i>✳</i>
+        <section class="logo-strip" aria-label="Tecnologías con las que trabajo">
+          <div class="logo-track">
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#aws"/></svg>Amazon Bedrock</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#databricks"/></svg>Databricks</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#langgraph"/></svg>LangGraph</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#modelcontextprotocol"/></svg>MCP</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#python"/></svg>Python</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#pytorch"/></svg>PyTorch</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#azure"/></svg>Azure</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#googlecloud"/></svg>Google Cloud</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#apachespark"/></svg>Apache Spark</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#kubernetes"/></svg>Kubernetes</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#owasp"/></svg>OWASP</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#nvidia"/></svg>NVIDIA</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#aws"/></svg>Amazon Bedrock</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#databricks"/></svg>Databricks</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#langgraph"/></svg>LangGraph</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#modelcontextprotocol"/></svg>MCP</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#python"/></svg>Python</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#pytorch"/></svg>PyTorch</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#azure"/></svg>Azure</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#googlecloud"/></svg>Google Cloud</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#apachespark"/></svg>Apache Spark</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#kubernetes"/></svg>Kubernetes</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#owasp"/></svg>OWASP</span>
+            <span aria-hidden="true"><svg><use href="assets/icons.svg#nvidia"/></svg>NVIDIA</span>
           </div>
         </section>
 
@@ -119,103 +152,250 @@
             <div><p class="eyebrow"><span class="section-number">01</span><span data-es="Impacto en producción" data-en="Impact in production">Impacto en producción</span></p><h2 data-es="La tecnología importa cuando <em>mueve algo.</em>" data-en="Technology matters when <em>it moves something.</em>">La tecnología importa cuando <em>mueve algo.</em></h2></div>
             <p class="section-note" data-es="Estrategia, arquitectura y delivery. Una sola conversación de principio a fin." data-en="Strategy, architecture, and delivery. One continuous conversation from start to finish.">Estrategia, arquitectura y delivery. Una sola conversación de principio a fin.</p>
           </div>
-          <article class="feature-card">
-            <div class="feature-topline"><span class="feature-tag"><span class="status-dot" aria-hidden="true"></span><span data-es="CASO DESTACADO · IA GENERATIVA" data-en="FEATURED CASE · GENERATIVE AI">CASO DESTACADO · IA GENERATIVA</span></span><span class="feature-year">2026</span></div>
+          <a class="feature-card" href="caso-agente.html">
+            <div class="feature-topline"><span class="feature-tag"><span class="status-dot" aria-hidden="true"></span><span data-es="CASO DESTACADO · IA GENERATIVA" data-en="FEATURED CASE · GENERATIVE AI">CASO DESTACADO · IA GENERATIVA</span></span><span class="feature-year">2024 — 2026</span></div>
             <div class="feature-content">
               <div class="feature-main">
                 <h3 data-es="Una respuesta mejor.<br>En cada agencia." data-en="A better answer.<br>In every branch.">Una respuesta mejor.<br>En cada agencia.</h3>
-                <p data-es="Diseñé y lideré de punta a punta un agente de IA generativa para transformar cómo miles de colaboradores encuentran información útil para sus clientes. De una búsqueda de ~20 minutos a una respuesta en menos de 8 segundos." data-en="I designed and led an end-to-end generative AI agent that changed how thousands of employees find useful information for customers. From a ~20-minute search to an answer in under 8 seconds.">Diseñé y lideré de punta a punta un agente de IA generativa para transformar cómo miles de colaboradores encuentran información útil para sus clientes. De una búsqueda de ~20 minutos a una respuesta en menos de 8 segundos.</p>
-                <div class="feature-tags"><span>Amazon Bedrock</span><span>RAG</span><span>AI product delivery</span></div>
+                <p data-es="Diseñé y dirigí de punta a punta un agente de IA generativa, como líder técnico de un equipo multidisciplinario de 10 personas. El personal de 200 agencias encuentra la respuesta para un cliente en menos de 8 segundos en lugar de unos 20 minutos, y todas dan la misma información actualizada." data-en="I designed and directed end to end a generative AI agent, as technical lead of a 10-person cross-functional team. Staff across 200 branches find the answer to a customer's question in under 8 seconds instead of about 20 minutes, and every branch gives the same, up-to-date information.">Diseñé y dirigí de punta a punta un agente de IA generativa, como líder técnico de un equipo multidisciplinario de 10 personas. El personal de 200 agencias encuentra la respuesta para un cliente en menos de 8 segundos en lugar de unos 20 minutos, y todas dan la misma información actualizada.</p>
+                <div class="feature-tags"><span><svg aria-hidden="true"><use href="assets/icons.svg#aws"/></svg>Amazon Bedrock</span><span>RAG</span><span>LLMOps</span><span data-es="Gobierno de producto" data-en="Product governance">Gobierno de producto</span></div>
               </div>
               <div class="feature-stats" aria-label="Resultados del proyecto">
-                <div class="stat"><strong>200<span>+</span></strong><span data-es="agencias" data-en="branches">agencias</span></div>
-                <div class="stat"><strong>5k<span>+</span></strong><span data-es="usuarios" data-en="users">usuarios</span></div>
-                <div class="stat"><strong>&lt;8<span>s</span></strong><span data-es="para responder" data-en="to an answer">para responder</span></div>
+                <div class="stat"><strong>200</strong><span data-es="agencias" data-en="branches">agencias</span></div>
+                <div class="stat"><strong>5k<span>+</span></strong><span data-es="usuarios activos" data-en="active users">usuarios activos</span></div>
+                <div class="stat"><strong>&lt;8<span>s</span></strong><span data-es="antes ~20 min" data-en="was ~20 min">antes ~20 min</span></div>
                 <div class="stat award-stat"><strong>№1</strong><span data-es="LatAm · FELABAN 2026" data-en="LatAm · FELABAN 2026">LatAm · FELABAN 2026</span></div>
               </div>
             </div>
-            <div class="feature-bottom"><span data-es="Arquitectura + liderazgo técnico + operación" data-en="Architecture + technical leadership + operations">Arquitectura + liderazgo técnico + operación</span><span>↗</span></div>
-          </article>
+            <div class="feature-bottom"><span data-es="Arquitectura + liderazgo técnico + operación" data-en="Architecture + technical leadership + operations">Arquitectura + liderazgo técnico + operación</span><span class="feature-link"><span data-es="Leer el caso" data-en="Read the case">Leer el caso</span> →</span></div>
+          </a>
           <div class="work-grid">
-            <article class="work-card">
+            <a class="work-card" href="trayectoria.html#banco-pichincha">
               <span class="card-index">01 / STRATEGY</span>
-              <div class="work-icon" aria-hidden="true">◈</div>
+              <div class="work-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></div>
               <h3 data-es="IA con dirección" data-en="AI with direction">IA con dirección</h3>
-              <p data-es="Portafolios de IA priorizados por valor, riesgo y reutilización. Inversiones con TCO claro y una ruta realista hasta producción." data-en="AI portfolios prioritized by value, risk, and reuse. Investments with clear TCO and a realistic path to production.">Portafolios de IA priorizados por valor, riesgo y reutilización. Inversiones con TCO claro y una ruta realista hasta producción.</p>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </article>
-            <article class="work-card">
+              <p data-es="Portafolio de más de 10 iniciativas priorizado en cuatro etapas: viabilidad, caso de negocio, presupuesto y entrega. Inversiones con TCO completo, aprobadas por el directorio." data-en="A portfolio of 10+ initiatives prioritized through a four-stage gate: feasibility, business case, budget, and delivery. Investments with full TCO, approved by the board.">Portafolio de más de 10 iniciativas priorizado en cuatro etapas: viabilidad, caso de negocio, presupuesto y entrega. Inversiones con TCO completo, aprobadas por el directorio.</p>
+              <span class="card-more" data-es="Ver en la trayectoria →" data-en="See in track record →">Ver en la trayectoria →</span>
+            </a>
+            <a class="work-card" href="trayectoria.html#banco-pichincha">
               <span class="card-index">02 / ARCHITECTURE</span>
-              <div class="work-icon" aria-hidden="true">⌘</div>
+              <div class="work-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><circle cx="4" cy="5" r="1.8"/><circle cx="20" cy="5" r="1.8"/><circle cx="4" cy="19" r="1.8"/><circle cx="20" cy="19" r="1.8"/><path d="M5.5 6.2 10 10.4m8.5-4.2L14 10.4m-8.5 7.4L10 13.6m8.5 4.2L14 13.6"/></svg></div>
               <h3 data-es="Sistemas que colaboran" data-en="Systems that collaborate">Sistemas que colaboran</h3>
-              <p data-es="Arquitecturas agénticas y patrones multinube: interoperabilidad MCP/A2A, datos con contexto y límites claros para operar." data-en="Agentic architectures and multi-cloud patterns: MCP/A2A interoperability, contextual data, and clear operational boundaries.">Arquitecturas agénticas y patrones multinube: interoperabilidad MCP/A2A, datos con contexto y límites claros para operar.</p>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </article>
-            <article class="work-card">
+              <p data-es="Malla de agentes empresarial con BIAN, ontologías y MCP/A2A: 5 agentes en operación en un año. Arquitecturas de referencia multinube en AWS, Azure y GCP." data-en="An enterprise agent mesh built on BIAN, ontologies, and MCP/A2A: 5 agents in operation within one year. Multi-cloud reference architectures on AWS, Azure, and GCP.">Malla de agentes empresarial con BIAN, ontologías y MCP/A2A: 5 agentes en operación en un año. Arquitecturas de referencia multinube en AWS, Azure y GCP.</p>
+              <span class="card-more" data-es="Ver en la trayectoria →" data-en="See in track record →">Ver en la trayectoria →</span>
+            </a>
+            <a class="work-card" href="trayectoria.html#produbanco">
               <span class="card-index">03 / TRUST</span>
-              <div class="work-icon" aria-hidden="true">◎</div>
+              <div class="work-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.4-4.6"/></svg></div>
               <h3 data-es="Confianza por diseño" data-en="Trust by design">Confianza por diseño</h3>
-              <p data-es="Gobierno y auditoría de IA alineados con ISO/IEC 42001, NIST AI RMF y controles que acompañan al sistema desde el primer día." data-en="AI governance and audit aligned with ISO/IEC 42001, NIST AI RMF, and controls that travel with the system from day one.">Gobierno y auditoría de IA alineados con ISO/IEC 42001, NIST AI RMF y controles que acompañan al sistema desde el primer día.</p>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </article>
+              <p data-es="Gobierno y auditoría de IA sobre ISO/IEC 42001, alineados con NIST AI RMF, COSO y el EU AI Act. Seguridad de agentes con OWASP Top 10 para LLM y aplicaciones agénticas." data-en="AI governance and audit on ISO/IEC 42001, aligned with NIST AI RMF, COSO, and the EU AI Act. Agent security based on the OWASP Top 10 for LLM and agentic applications.">Gobierno y auditoría de IA sobre ISO/IEC 42001, alineados con NIST AI RMF, COSO y el EU AI Act. Seguridad de agentes con OWASP Top 10 para LLM y aplicaciones agénticas.</p>
+              <span class="card-more" data-es="Ver en la trayectoria →" data-en="See in track record →">Ver en la trayectoria →</span>
+            </a>
           </div>
+        </section>
+
+        <section class="section-wrap path-section" aria-labelledby="path-title">
+          <div class="section-heading">
+            <div><p class="eyebrow"><span class="section-number">02</span><span data-es="Trayectoria" data-en="Track record">Trayectoria</span></p><h2 id="path-title" data-es="Del laboratorio <em>a la estrategia.</em>" data-en="From the lab <em>to strategy.</em>">Del laboratorio <em>a la estrategia.</em></h2></div>
+            <a class="inline-link" href="trayectoria.html"><span data-es="Ver trayectoria, educación y certificaciones" data-en="See experience, education, and certifications">Ver trayectoria, educación y certificaciones</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <ol class="path-list">
+            <li><a href="trayectoria.html#produbanco"><span class="path-years" data-es="2026 — hoy" data-en="2026 — now">2026 — hoy</span><strong data-es="Líder de IA – Auditoría" data-en="AI Audit Lead">Líder de IA – Auditoría</strong><span>Produbanco · Grupo Promerica</span></a></li>
+            <li><a href="trayectoria.html#banco-pichincha"><span class="path-years">2024 — 2026</span><strong data-es="Arquitecto de IA y líder técnico" data-en="AI Architect & technical lead">Arquitecto de IA y líder técnico</strong><span>Banco Pichincha</span></a></li>
+            <li><a href="trayectoria.html#banco-pichincha-ds"><span class="path-years">2023 — 2024</span><strong data-es="Data Scientist – Ciberseguridad" data-en="Data Scientist – Cybersecurity">Data Scientist – Ciberseguridad</strong><span>Banco Pichincha</span></a></li>
+            <li><a href="trayectoria.html#anteriores"><span class="path-years">2019 — 2023</span><strong data-es="Data science, Edge AI e investigación" data-en="Data science, Edge AI, and research">Data science, Edge AI e investigación</strong><span>Prediqt · NUO · ESPOL · Indoamérica · SunPlena</span></a></li>
+          </ol>
         </section>
 
         <section class="lab-section" id="lab">
           <div class="section-wrap">
             <div class="section-heading">
-              <div><p class="eyebrow"><span class="section-number">02</span><span data-es="Cuaderno de laboratorio" data-en="The lab notebook">Cuaderno de laboratorio</span></p><h2 data-es="No todo empieza como producto.<br><em>Todo empieza con curiosidad.</em>" data-en="Not everything starts as a product.<br><em>Everything starts with curiosity.</em>">No todo empieza como producto.<br><em>Todo empieza con curiosidad.</em></h2></div>
-              <p class="section-note" data-es="Proyectos, prototipos e ideas en evolución. Aquí vive el lado maker." data-en="Projects, prototypes, and ideas in progress. This is where the maker side lives.">Proyectos, prototipos e ideas en evolución. Aquí vive el lado maker.</p>
+              <div><p class="eyebrow"><span class="section-number">03</span><span data-es="Cuaderno de laboratorio" data-en="The lab notebook">Cuaderno de laboratorio</span></p><h2 data-es="No todo empieza como producto.<br><em>Todo empieza con curiosidad.</em>" data-en="Not everything starts as a product.<br><em>Everything starts with curiosity.</em>">No todo empieza como producto.<br><em>Todo empieza con curiosidad.</em></h2></div>
+              <a class="inline-link" href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer">github.com/basaravia <span aria-hidden="true">↗</span></a>
             </div>
             <div class="lab-grid">
-              <article class="lab-card lab-feature">
-                <div class="lab-card-head"><span class="lab-status"><span class="status-dot" aria-hidden="true"></span><span data-es="EXPLORANDO" data-en="EXPLORING">EXPLORANDO</span></span><span>AI / SECURITY</span></div>
+              <a class="lab-card lab-feature" href="https://github.com/basaravia/taller-ia-cibersecurity" target="_blank" rel="noopener noreferrer">
+                <div class="lab-card-head"><span class="lab-status"><span class="status-dot" aria-hidden="true"></span><span data-es="TALLER · 2026" data-en="WORKSHOP · 2026">TALLER · 2026</span></span><span>AI / SECURITY</span></div>
                 <div class="lab-visual visual-agent" aria-hidden="true"><div class="node node-a">LLM</div><div class="node node-b">TOOL</div><div class="node node-c">HUMAN</div><div class="node-center">AGENT</div><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
-                <div class="lab-copy"><h3 data-es="Agentes, pero con límites." data-en="Agents, with boundaries.">Agentes, pero con límites.</h3><p data-es="Un playground práctico para explorar seguridad de agentes: permisos, supervisión humana, trazabilidad y defensa frente a prompt injection." data-en="A hands-on playground for agent security: permissions, human oversight, traceability, and defenses against prompt injection.">Un playground práctico para explorar seguridad de agentes: permisos, supervisión humana, trazabilidad y defensa frente a prompt injection.</p><span class="lab-meta">OWASP · Guardrails · Human-in-the-loop</span></div>
-              </article>
-              <article class="lab-card">
-                <div class="lab-card-head"><span class="lab-status"><span class="status-dot" aria-hidden="true"></span><span data-es="EN NOTAS" data-en="IN NOTES">EN NOTAS</span></span><span>ARCHITECTURE</span></div>
+                <div class="lab-copy"><h3 data-es="Agentes, pero con límites." data-en="Agents, with boundaries.">Agentes, pero con límites.</h3><p data-es="Taller práctico de ciberseguridad agéntica: un escenario del OWASP Top 10 para LLM y Agentic AI Threats por rama, con permisos, supervisión humana y defensa frente a prompt injection." data-en="A hands-on agentic security workshop: one OWASP Top 10 for LLM and Agentic AI Threats scenario per branch, covering permissions, human oversight, and prompt injection defenses.">Taller práctico de ciberseguridad agéntica: un escenario del OWASP Top 10 para LLM y Agentic AI Threats por rama, con permisos, supervisión humana y defensa frente a prompt injection.</p><span class="lab-meta"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>taller-ia-cibersecurity ↗</span></div>
+              </a>
+              <a class="lab-card" href="https://github.com/basaravia/langchain-mcp-duckduckgo" target="_blank" rel="noopener noreferrer">
+                <div class="lab-card-head"><span class="lab-status"><span class="status-dot" aria-hidden="true"></span><span data-es="PROTOTIPO" data-en="PROTOTYPE">PROTOTIPO</span></span><span>AGENTS / MCP</span></div>
                 <div class="lab-visual visual-mesh" aria-hidden="true"><span class="mesh-center">MESH</span><span class="mesh-node m1">MCP</span><span class="mesh-node m2">A2A</span><span class="mesh-node m3">DATA</span><span class="mesh-node m4">TOOLS</span><svg viewBox="0 0 320 120"><path d="M160 60 70 25M160 60 250 25M160 60 70 95M160 60 250 95M70 25 250 25M70 95 250 95"/></svg></div>
-                <div class="lab-copy"><h3 data-es="Una malla que sí conversa." data-en="A mesh that actually talks.">Una malla que sí conversa.</h3><p data-es="Notas y patrones de arquitectura para conectar agentes, herramientas y datos sin perder control ni contexto." data-en="Architecture notes and patterns for connecting agents, tools, and data without losing control or context.">Notas y patrones de arquitectura para conectar agentes, herramientas y datos sin perder control ni contexto.</p><span class="lab-meta">MCP / A2A · BIAN · Cloud-agnostic</span></div>
-              </article>
-              <article class="lab-card">
-                <div class="lab-card-head"><span class="lab-status lab-status-dim"><span data-es="FUTURO" data-en="NEXT">FUTURO</span></span><span>EDGE / VISION</span></div>
-                <div class="lab-visual visual-edge" aria-hidden="true"><div class="edge-cube"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="edge-label">INFERENCE @ EDGE</span><span class="edge-ray"></span></div>
-                <div class="lab-copy"><h3 data-es="Inteligencia en el borde." data-en="Intelligence at the edge.">Inteligencia en el borde.</h3><p data-es="Visión 3D y TinyML: modelos eficientes que perciben, entienden y responden donde ocurren las cosas." data-en="3D vision and TinyML: efficient models that perceive, understand, and respond where things happen.">Visión 3D y TinyML: modelos eficientes que perciben, entienden y responden donde ocurren las cosas.</p><span class="lab-meta">Edge AI · 3D vision · TinyML</span></div>
-              </article>
+                <div class="lab-copy"><h3 data-es="Una malla que sí conversa." data-en="A mesh that actually talks.">Una malla que sí conversa.</h3><p data-es="Agente de LangChain conectado a un servidor MCP remoto, con un LLM local en Docker. Patrones para unir agentes, herramientas y datos sin perder control." data-en="A LangChain agent wired to a remote MCP server, with a local LLM on Docker. Patterns for joining agents, tools, and data without losing control.">Agente de LangChain conectado a un servidor MCP remoto, con un LLM local en Docker. Patrones para unir agentes, herramientas y datos sin perder control.</p><span class="lab-meta"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>langchain-mcp-duckduckgo ↗</span></div>
+              </a>
+              <a class="lab-card" href="https://github.com/basaravia/advanced-ai-path" target="_blank" rel="noopener noreferrer">
+                <div class="lab-card-head"><span class="lab-status"><span class="status-dot" aria-hidden="true"></span><span data-es="EN CURSO" data-en="ONGOING">EN CURSO</span></span><span>LEARNING PATH</span></div>
+                <div class="lab-visual visual-edge" aria-hidden="true"><div class="edge-cube"><i></i><i></i><i></i></div><span class="edge-label">FROM BASICS TO AGENTS</span><span class="edge-ray"></span></div>
+                <div class="lab-copy"><h3 data-es="De las bases a lo avanzado." data-en="From basics to advanced.">De las bases a lo avanzado.</h3><p data-es="Ruta de formación en IA, desde los fundamentos hasta arquitecturas flexibles y escalables. Lo que enseño en clase, ordenado para que cualquiera lo siga." data-en="An AI learning path from fundamentals to flexible, scalable architectures. What I teach in class, organized so anyone can follow it.">Ruta de formación en IA, desde los fundamentos hasta arquitecturas flexibles y escalables. Lo que enseño en clase, ordenado para que cualquiera lo siga.</p><span class="lab-meta"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>advanced-ai-path ↗</span></div>
+              </a>
             </div>
-            <p class="lab-footnote"><span aria-hidden="true">✳</span> <span data-es="Los experimentos evolucionan. Lo importante es compartir el proceso." data-en="Experiments evolve. The important part is sharing the process.">Los experimentos evolucionan. Lo importante es compartir el proceso.</span></p>
+          </div>
+        </section>
+
+        <section class="section-wrap speaking-section" id="speaking">
+          <div class="section-heading">
+            <div><p class="eyebrow"><span class="section-number">04</span><span data-es="Charlas, clases y comunidad" data-en="Talks, classes, and community">Charlas, clases y comunidad</span></p><h2 data-es="Lo que aprendo, <em>lo comparto.</em>" data-en="What I learn, <em>I share.</em>">Lo que aprendo, <em>lo comparto.</em></h2></div>
+            <p class="section-note" data-es="Talleres, conferencias y cinco años liderando comunidad de IA en Quito." data-en="Workshops, conferences, and five years leading an AI community in Quito.">Talleres, conferencias y cinco años liderando comunidad de IA en Quito.</p>
+          </div>
+          <div class="talk-grid">
+            <article class="talk-card talk-feature">
+              <span class="talk-kind" data-es="Taller · 2026" data-en="Workshop · 2026">Taller · 2026</span>
+              <h3 data-es="Ciberseguridad Agéntica: OWASP Top 10 LLM y Agentic AI Threats" data-en="Agentic Cybersecurity: OWASP Top 10 LLM & Agentic AI Threats">Ciberseguridad Agéntica: OWASP Top 10 LLM y Agentic AI Threats</h3>
+              <p>Python Quito</p>
+              <a class="talk-link" href="https://github.com/basaravia/taller-ia-cibersecurity" target="_blank" rel="noopener noreferrer"><span data-es="Material del taller" data-en="Workshop material">Material del taller</span> ↗</a>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Conferencia" data-en="Conference">Conferencia</span>
+              <h3>Gen AI Day</h3>
+              <p data-es="Banco Pichincha con AWS" data-en="Banco Pichincha with AWS">Banco Pichincha con AWS</p>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Panel" data-en="Panel">Panel</span>
+              <h3>tinyML for Good</h3>
+              <p data-es="Panelista junto a ponentes internacionales de tinyML" data-en="Panelist alongside international tinyML speakers">Panelista junto a ponentes internacionales de tinyML</p>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Conferencia · 2021" data-en="Conference · 2021">Conferencia · 2021</span>
+              <h3>IEEE Week · ESPE</h3>
+              <p data-es="Deep learning y Edge AI" data-en="Deep learning and Edge AI">Deep learning y Edge AI</p>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Conferencia" data-en="Conference">Conferencia</span>
+              <h3 data-es="Deep Learning de cero a experto" data-en="Deep Learning from zero to expert">Deep Learning de cero a experto</h3>
+              <p>FLISOL Loja</p>
+              <a class="talk-link" href="https://github.com/basaravia/DeepLearning_ZtoD" target="_blank" rel="noopener noreferrer"><span data-es="Material" data-en="Material">Material</span> ↗</a>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Docencia · 2023 — 2024" data-en="Teaching · 2023 — 2024">Docencia · 2023 — 2024</span>
+              <h3 data-es="Instructor de IA" data-en="AI Instructor">Instructor de IA</h3>
+              <p data-es="Ciencia de Datos Ecuador: Python, SQL, ML y deep learning" data-en="Ciencia de Datos Ecuador: Python, SQL, ML, and deep learning">Ciencia de Datos Ecuador: Python, SQL, ML y deep learning</p>
+            </article>
+            <article class="talk-card">
+              <span class="talk-kind" data-es="Comunidad · 2019 — 2024" data-en="Community · 2019 — 2024">Comunidad · 2019 — 2024</span>
+              <h3>City Lead · Saturdays.AI Quito</h3>
+              <p data-es="Mentor en Edge AI y embajador ante NVIDIA Deep Learning Institute. 11 proyectos en 3 meses (2020)." data-en="Edge AI mentor and ambassador to the NVIDIA Deep Learning Institute. 11 projects in 3 months (2020).">Mentor en Edge AI y embajador ante NVIDIA Deep Learning Institute. 11 proyectos en 3 meses (2020).</p>
+              <a class="talk-link" href="https://github.com/basaravia/iot_codes" target="_blank" rel="noopener noreferrer"><span data-es="Curso de IoT con Raspberry Pi" data-en="IoT course with Raspberry Pi">Curso de IoT con Raspberry Pi</span> ↗</a>
+            </article>
+          </div>
+          <div class="gallery" id="gallery" data-gallery-section hidden>
+            <div class="gallery-head">
+              <p class="gallery-title" data-es="Desde 2019, en fotos" data-en="Since 2019, in photos">Desde 2019, en fotos</p>
+              <a class="inline-link" href="trayectoria.html#galeria"><span data-es="Ver la línea de tiempo completa" data-en="See the full timeline">Ver la línea de tiempo completa</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="gallery-grid" data-gallery="destacadas"></div>
+          </div>
+        </section>
+
+        <section class="notes-section" id="notes" data-notes-section hidden>
+          <div class="section-wrap">
+            <div class="section-heading">
+              <div><p class="eyebrow"><span class="section-number">05</span><span data-es="Notas" data-en="Notes">Notas</span></p><h2 data-es="Ideas que <em>valen la pena escribir.</em>" data-en="Ideas worth <em>writing down.</em>">Ideas que <em>valen la pena escribir.</em></h2></div>
+              <a class="inline-link" href="blog/"><span data-es="Todas las notas" data-en="All notes">Todas las notas</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="notes-grid" data-notes="3"></div>
           </div>
         </section>
 
         <section class="section-wrap about-section" id="about">
           <div class="section-heading">
-            <div><p class="eyebrow"><span class="section-number">03</span><span data-es="El sistema detrás del sistema" data-en="The system behind the system">El sistema detrás del sistema</span></p><h2 data-es="Visión amplia.<br><em>Manos en el código.</em>" data-en="Wide-angle thinking.<br><em>Hands on the code.</em>">Visión amplia.<br><em>Manos en el código.</em></h2></div>
+            <div><p class="eyebrow"><span class="section-number">06</span><span data-es="El sistema detrás del sistema" data-en="The system behind the system">El sistema detrás del sistema</span></p><h2 data-es="Visión amplia.<br><em>Manos en el código.</em>" data-en="Wide-angle thinking.<br><em>Hands on the code.</em>">Visión amplia.<br><em>Manos en el código.</em></h2></div>
           </div>
           <div class="about-grid">
             <div class="about-story">
-              <p data-es="Trabajo en la intersección entre arquitectura empresarial, ciencia de datos e inteligencia artificial. Me gusta resolver problemas complejos con equipos diversos y construir soluciones que la gente realmente quiera usar." data-en="I work at the intersection of enterprise architecture, data science, and artificial intelligence. I like solving complex problems with diverse teams and building solutions people actually want to use.">Trabajo en la intersección entre arquitectura empresarial, ciencia de datos e inteligencia artificial. Me gusta resolver problemas complejos con equipos diversos y construir soluciones que la gente realmente quiera usar.</p>
-              <p data-es="Antes de la ola generativa, ya estaba construyendo con deep learning, visión 3D y Edge AI. Esa mezcla de fundamentos y curiosidad sigue guiando cómo diseño lo que viene." data-en="Before the generative wave, I was already building with deep learning, 3D vision, and Edge AI. That mix of fundamentals and curiosity still guides how I design what's next.">Antes de la ola generativa, ya estaba construyendo con deep learning, visión 3D y Edge AI. Esa mezcla de fundamentos y curiosidad sigue guiando cómo diseño lo que viene.</p>
-              <a class="inline-link" href="https://github.com/basaravia" target="_blank" rel="noreferrer">github.com/basaravia <span aria-hidden="true">↗</span></a>
+              <p data-es="Trabajo en la intersección entre arquitectura empresarial, ciencia de datos e inteligencia artificial. Lidero equipos técnicos multidisciplinarios y llevo cada decisión desde el caso de negocio hasta la operación." data-en="I work at the intersection of enterprise architecture, data science, and artificial intelligence. I lead cross-functional technical teams and carry each decision from business case to operations.">Trabajo en la intersección entre arquitectura empresarial, ciencia de datos e inteligencia artificial. Lidero equipos técnicos multidisciplinarios y llevo cada decisión desde el caso de negocio hasta la operación.</p>
+              <p data-es="Antes de la ola generativa ya construía con deep learning, visión 3D y Edge AI: una patente publicada, dos publicaciones IEEE y estudios de maestría en Inteligencia Computacional en COPPE/UFRJ (Brasil)." data-en="Before the generative wave I was already building with deep learning, 3D vision, and Edge AI: a published patent, two IEEE papers, and graduate studies in Computational Intelligence at COPPE/UFRJ (Brazil).">Antes de la ola generativa ya construía con deep learning, visión 3D y Edge AI: una patente publicada, dos publicaciones IEEE y estudios de maestría en Inteligencia Computacional en COPPE/UFRJ (Brasil).</p>
+              <div class="off-hours">
+                <p class="off-hours-title" data-es="Fuera del código" data-en="Off the clock">Fuera del código</p>
+                <div class="off-hours-grid">
+                  <div class="off-item">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="5.5" cy="16.5" r="3.5"/><circle cx="18.5" cy="16.5" r="3.5"/><path d="M5.5 16.5 9 9h6l3.5 7.5M9 9 12 16.5h2M13.5 6h2.5l-1 3"/></svg>
+                    <div><strong>XC · off-road</strong><span data-es="Leer el terreno antes de acelerar." data-en="Read the terrain before you accelerate.">Leer el terreno antes de acelerar.</span></div>
+                  </div>
+                  <div class="off-item">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+                    <div><strong>Metal</strong><span data-es="La banda sonora de las noches de depuración." data-en="The soundtrack of late-night debugging.">La banda sonora de las noches de depuración.</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="stack-card">
-              <div class="stack-head"><span data-es="TOOLKIT" data-en="TOOLKIT">TOOLKIT</span><span class="stack-dots">•••</span></div>
-              <div class="stack-row"><span class="stack-label">AI / ML</span><span>LLMs · RAG · LangGraph · PySpark</span></div>
-              <div class="stack-row"><span class="stack-label">CLOUD</span><span>AWS · Azure · GCP · Databricks</span></div>
-              <div class="stack-row"><span class="stack-label">AGENTS</span><span>MCP · A2A · BIAN · Ontologies</span></div>
-              <div class="stack-row"><span class="stack-label">TRUST</span><span>ISO 42001 · NIST AI RMF · OWASP</span></div>
-              <div class="stack-row"><span class="stack-label">BUILD</span><span>Python · Edge AI · MLOps · LLMOps</span></div>
-              <div class="stack-foot"><span class="status-dot" aria-hidden="true"></span><span data-es="Curioso por naturaleza. Constructor por elección." data-en="Curious by nature. Builder by choice.">Curioso por naturaleza. Constructor por elección.</span></div>
+              <div class="stack-head"><span>TOOLKIT</span><a href="trayectoria.html#certificaciones" data-es="Certificaciones →" data-en="Certifications →">Certificaciones →</a></div>
+              <div class="stack-group">
+                <span class="stack-label" data-es="IA generativa y agéntica" data-en="Generative & agentic AI">IA generativa y agéntica</span>
+                <ul class="tech-list">
+                  <li style="--brand:#ff9900"><svg aria-hidden="true"><use href="assets/icons.svg#aws"/></svg>Bedrock</li>
+                  <li style="--brand:#7fc8ff"><svg aria-hidden="true"><use href="assets/icons.svg#langchain"/></svg>LangChain</li>
+                  <li style="--brand:#7fc8ff"><svg aria-hidden="true"><use href="assets/icons.svg#langgraph"/></svg>LangGraph</li>
+                  <li style="--brand:#f0f3f5"><svg aria-hidden="true"><use href="assets/icons.svg#modelcontextprotocol"/></svg>MCP</li>
+                  <li><span class="mono-badge">A2A</span>A2A</li>
+                  <li><span class="mono-badge">RAG</span>RAG</li>
+                  <li style="--brand:#f0f3f5"><svg aria-hidden="true"><use href="assets/icons.svg#ollama"/></svg><span data-es="LLMs locales" data-en="Local LLMs">LLMs locales</span></li>
+                </ul>
+              </div>
+              <div class="stack-group">
+                <span class="stack-label">ML / DL</span>
+                <ul class="tech-list">
+                  <li style="--brand:#ffd43b"><svg aria-hidden="true"><use href="assets/icons.svg#python"/></svg>Python</li>
+                  <li style="--brand:#ee4c2c"><svg aria-hidden="true"><use href="assets/icons.svg#pytorch"/></svg>PyTorch</li>
+                  <li style="--brand:#ff6f00"><svg aria-hidden="true"><use href="assets/icons.svg#tensorflow"/></svg>TensorFlow</li>
+                  <li style="--brand:#f7931e"><svg aria-hidden="true"><use href="assets/icons.svg#scikitlearn"/></svg>scikit-learn</li>
+                  <li style="--brand:#8f7cff"><svg aria-hidden="true"><use href="assets/icons.svg#opencv"/></svg>OpenCV</li>
+                </ul>
+              </div>
+              <div class="stack-group">
+                <span class="stack-label" data-es="Datos y nube" data-en="Data & cloud">Datos y nube</span>
+                <ul class="tech-list">
+                  <li style="--brand:#ff3621"><svg aria-hidden="true"><use href="assets/icons.svg#databricks"/></svg>Databricks</li>
+                  <li style="--brand:#e25a1c"><svg aria-hidden="true"><use href="assets/icons.svg#apachespark"/></svg>PySpark</li>
+                  <li style="--brand:#4581c3"><svg aria-hidden="true"><use href="assets/icons.svg#neo4j"/></svg>Neo4j</li>
+                  <li style="--brand:#ff9900"><svg aria-hidden="true"><use href="assets/icons.svg#aws"/></svg>AWS</li>
+                  <li style="--brand:#0089d6"><svg aria-hidden="true"><use href="assets/icons.svg#azure"/></svg>Azure</li>
+                  <li style="--brand:#4285f4"><svg aria-hidden="true"><use href="assets/icons.svg#googlecloud"/></svg>GCP</li>
+                </ul>
+              </div>
+              <div class="stack-group">
+                <span class="stack-label">MLOps / LLMOps</span>
+                <ul class="tech-list">
+                  <li style="--brand:#2496ed"><svg aria-hidden="true"><use href="assets/icons.svg#docker"/></svg>Docker</li>
+                  <li style="--brand:#326ce5"><svg aria-hidden="true"><use href="assets/icons.svg#kubernetes"/></svg>Kubernetes</li>
+                  <li style="--brand:#2088ff"><svg aria-hidden="true"><use href="assets/icons.svg#githubactions"/></svg>CI/CD</li>
+                  <li style="--brand:#05998b"><svg aria-hidden="true"><use href="assets/icons.svg#fastapi"/></svg>FastAPI</li>
+                  <li style="--brand:#ffc900"><svg aria-hidden="true"><use href="assets/icons.svg#kedro"/></svg>Kedro</li>
+                </ul>
+              </div>
+              <div class="stack-group">
+                <span class="stack-label" data-es="Gobierno y seguridad" data-en="Governance & security">Gobierno y seguridad</span>
+                <ul class="tech-list">
+                  <li style="--brand:#f0f3f5"><svg aria-hidden="true"><use href="assets/icons.svg#owasp"/></svg>OWASP LLM / Agentic</li>
+                  <li><span class="mono-badge">ISO</span>ISO/IEC 42001</li>
+                  <li><span class="mono-badge">NIST</span>AI RMF</li>
+                  <li><span class="mono-badge">EU</span>AI Act</li>
+                  <li><span class="mono-badge">BIAN</span>BIAN · TOGAF</li>
+                </ul>
+              </div>
+              <div class="stack-group">
+                <span class="stack-label">Edge AI / IoT</span>
+                <ul class="tech-list">
+                  <li style="--brand:#76b900"><svg aria-hidden="true"><use href="assets/icons.svg#nvidia"/></svg>NVIDIA</li>
+                  <li style="--brand:#3d9be9"><svg aria-hidden="true"><use href="assets/icons.svg#intel"/></svg>RealSense</li>
+                  <li style="--brand:#e0436b"><svg aria-hidden="true"><use href="assets/icons.svg#raspberrypi"/></svg>Raspberry Pi</li>
+                  <li style="--brand:#b56bd6"><svg aria-hidden="true"><use href="assets/icons.svg#mqtt"/></svg>MQTT</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="contact-section">
           <div class="section-wrap contact-inner">
-            <p class="eyebrow"><span class="section-number">04</span><span data-es="¿Qué construimos?" data-en="What shall we build?">¿Qué construimos?</span></p>
+            <p class="eyebrow"><span class="section-number">07</span><span data-es="Contacto" data-en="Contact">Contacto</span></p>
             <h2 data-es="Las buenas ideas<br>merecen <em>producción.</em>" data-en="Good ideas<br>deserve <em>production.</em>">Las buenas ideas<br>merecen <em>producción.</em></h2>
-            <p data-es="Si estás resolviendo un reto de IA, diseñando arquitectura o simplemente tienes una idea rara que merece un prototipo, hablemos." data-en="If you're tackling an AI challenge, designing architecture, or have a weird idea that deserves a prototype, let's talk.">Si estás resolviendo un reto de IA, diseñando arquitectura o simplemente tienes una idea rara que merece un prototipo, hablemos.</p>
-            <a class="button button-primary contact-button" href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noreferrer"><span data-es="Escríbeme en LinkedIn" data-en="Message me on LinkedIn">Escríbeme en LinkedIn</span><span aria-hidden="true">↗</span></a>
+            <p data-es="Escribo y comparto sobre arquitectura agéntica, gobierno y seguridad de IA. Estos son mis únicos perfiles oficiales." data-en="I write and share about agentic architecture, AI governance, and AI security. These are my only official profiles.">Escribo y comparto sobre arquitectura agéntica, gobierno y seguridad de IA. Estos son mis únicos perfiles oficiales.</p>
+            <div class="contact-links">
+              <a class="button button-primary" href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noopener noreferrer me"><svg aria-hidden="true"><use href="assets/icons.svg#linkedin"/></svg>linkedin.com/in/asaravia</a>
+              <a class="button button-ghost" href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer me"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg>github.com/basaravia</a>
+            </div>
           </div>
           <div class="contact-orbit" aria-hidden="true"><span></span><span></span><span></span><i>✳</i></div>
         </section>
@@ -223,8 +403,8 @@
 
       <footer class="footer section-wrap">
         <a class="wordmark footer-mark" href="#top"><span class="wordmark-mark">a<span>.</span>s</span></a>
-        <p>© <span id="year"></span> Alexander Saravia <span class="footer-sep">/</span> <span data-es="Hecho con intención y unas cuantas líneas de código." data-en="Made with intention and a few lines of code.">Hecho con intención y unas cuantas líneas de código.</span></p>
-        <div class="footer-links"><a href="https://github.com/basaravia" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noreferrer">LinkedIn ↗</a><button id="footer-terminal" type="button" aria-label="Open terminal">[?]</button><a href="#top" data-es="Volver arriba ↑" data-en="Back to top ↑">Volver arriba ↑</a></div>
+        <p>© <span class="year"></span> Alexander Saravia <span class="footer-sep">/</span> <span data-es="Hecho con intención y unas cuantas líneas de código." data-en="Made with intention and a few lines of code.">Hecho con intención y unas cuantas líneas de código.</span></p>
+        <div class="footer-links"><a href="trayectoria.html" data-es="Trayectoria" data-en="Track record">Trayectoria</a><a href="blog/" data-es="Notas" data-en="Notes">Notas</a><a href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><button id="footer-terminal" type="button" aria-label="Open terminal">[?]</button></div>
       </footer>
     </div>
 

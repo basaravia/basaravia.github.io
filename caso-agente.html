@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es" data-root="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="robots" content="noimageai">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#080b10">
+    <meta name="description" content="Caso de estudio: el agente de IA generativa que usan 200 agencias bancarias, con respuestas en menos de 8 segundos. Premio FELABAN 2026, 1.er lugar en Latinoamérica.">
+    <meta property="og:title" content="Una respuesta mejor en cada agencia — Alexander Saravia">
+    <meta property="og:description" content="Agente de IA generativa en 200 agencias: de ~20 minutos a menos de 8 segundos. FELABAN 2026, 1.er lugar LatAm.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aisaravia.online/caso-agente.html">
+    <meta property="og:image" content="https://aisaravia.online/assets/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title data-es="Caso: agente de IA generativa — Alexander Saravia" data-en="Case: generative AI agent — Alexander Saravia">Caso: agente de IA generativa — Alexander Saravia</title>
+    <link rel="canonical" href="https://aisaravia.online/caso-agente.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="data/contenido.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Alexander Saravia, inicio">
+          <span class="wordmark-mark">a<span>.</span>s</span>
+          <span class="wordmark-label">TECH LEAD / AI ARCHITECTURE</span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="./#work" aria-current="page" data-es="Trabajo" data-en="Work">Trabajo</a>
+          <a href="trayectoria.html" data-es="Trayectoria" data-en="Track record">Trayectoria</a>
+          <a href="./#speaking" data-es="Charlas" data-en="Speaking">Charlas</a>
+          <a href="./#about" data-es="Acerca de" data-en="About">Acerca de</a>
+        </nav>
+        <div class="top-actions">
+          <button class="language-toggle" type="button" aria-label="Switch language">EN</button>
+          <a class="icon-link" href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn"><svg aria-hidden="true"><use href="assets/icons.svg#linkedin"/></svg></a>
+          <a class="icon-link" href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer me" aria-label="GitHub"><svg aria-hidden="true"><use href="assets/icons.svg#github"/></svg></a>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="section-wrap">
+            <p class="breadcrumb"><a href="./#work" data-es="Trabajo" data-en="Work">Trabajo</a> / <span data-es="Caso destacado" data-en="Featured case">Caso destacado</span></p>
+            <h1 data-es="Una respuesta mejor. <span class='headline-accent'>En cada agencia.</span>" data-en="A better answer. <span class='headline-accent'>In every branch.</span>">Una respuesta mejor. <span class="headline-accent">En cada agencia.</span></h1>
+            <p class="lead" data-es="Cómo diseñé y dirigí de punta a punta un agente de IA generativa para Banco Pichincha que hoy usa el personal de 200 agencias en todo Ecuador, y que ganó el Digital Innovation Award 2026 de FELABAN." data-en="How I designed and directed end to end a generative AI agent for Banco Pichincha that staff across 200 branches in Ecuador now use, and that won FELABAN's Digital Innovation Award 2026.">Cómo diseñé y dirigí de punta a punta un agente de IA generativa para Banco Pichincha que hoy usa el personal de 200 agencias en todo Ecuador, y que ganó el Digital Innovation Award 2026 de FELABAN.</p>
+            <div class="case-stats" aria-label="Resultados">
+              <div><strong>200</strong><span data-es="agencias" data-en="branches">agencias</span></div>
+              <div><strong>&lt;8 s</strong><span data-es="antes ~20 min" data-en="was ~20 min">antes ~20 min</span></div>
+              <div><strong>5k+</strong><span data-es="usuarios activos" data-en="active users">usuarios activos</span></div>
+              <div><strong>200k+</strong><span data-es="preguntas" data-en="questions">preguntas</span></div>
+              <div><strong>80 %</strong><span data-es="satisfacción" data-en="satisfaction">satisfacción</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="section-wrap prose">
+            <h2 data-es="El problema" data-en="The problem">El problema</h2>
+            <div class="prose-body">
+              <p data-es="Cuando un cliente hacía una pregunta en una agencia, encontrar la respuesta correcta podía tomar <strong>unos 20 minutos</strong>: había que buscar entre múltiples fuentes de documentación. Además, cada agencia podía dar una versión distinta de la misma información." data-en="When a customer asked a question at a branch, finding the right answer could take <strong>about 20 minutes</strong>: staff had to search across many documentation sources. And each branch could give a different version of the same information.">Cuando un cliente hacía una pregunta en una agencia, encontrar la respuesta correcta podía tomar <strong>unos 20 minutos</strong>: había que buscar entre múltiples fuentes de documentación. Además, cada agencia podía dar una versión distinta de la misma información.</p>
+              <p data-es="El reto no era solo técnico: en banca regulada, una respuesta rápida que no se puede verificar es peor que una lenta." data-en="The challenge wasn't only technical: in regulated banking, a fast answer that can't be verified is worse than a slow one.">El reto no era solo técnico: en banca regulada, una respuesta rápida que no se puede verificar es peor que una lenta.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="section-wrap prose">
+            <h2 data-es="La solución" data-en="The solution">La solución</h2>
+            <div class="prose-body">
+              <p data-es="Un agente de IA generativa con <strong>recuperación aumentada (RAG) sobre Amazon Bedrock</strong>, que responde a partir de la base de conocimiento oficial del banco. Así se unificó y modernizó la información de todas las agencias: hoy el discurso es uno solo." data-en="A generative AI agent using <strong>retrieval-augmented generation (RAG) on Amazon Bedrock</strong>, answering from the bank's official knowledge base. That unified and modernized the information across every branch: today there is one message.">Un agente de IA generativa con <strong>recuperación aumentada (RAG) sobre Amazon Bedrock</strong>, que responde a partir de la base de conocimiento oficial del banco. Así se unificó y modernizó la información de todas las agencias: hoy el discurso es uno solo.</p>
+              <figure class="diagram">
+                <svg viewBox="0 0 760 300" role="img" aria-labelledby="diagram-title">
+                  <title id="diagram-title">Flujo general del agente: consulta, recuperación de documentos, modelo de lenguaje y respuesta con controles transversales</title>
+                  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#a3f7ce"/></marker></defs>
+                  <rect class="d-box" x="10" y="70" width="130" height="70" rx="6"/>
+                  <text class="d-label" x="75" y="100" text-anchor="middle" data-es="Colaborador" data-en="Staff">Colaborador</text>
+                  <text class="d-sub" x="75" y="120" text-anchor="middle" data-es="en la agencia" data-en="at the branch">en la agencia</text>
+                  <rect class="d-box-accent" x="210" y="70" width="140" height="70" rx="6"/>
+                  <text class="d-label" x="280" y="100" text-anchor="middle" data-es="Agente" data-en="Agent">Agente</text>
+                  <text class="d-sub" x="280" y="120" text-anchor="middle" data-es="orquestación" data-en="orchestration">orquestación</text>
+                  <rect class="d-box" x="420" y="20" width="150" height="70" rx="6"/>
+                  <text class="d-label" x="495" y="50" text-anchor="middle" data-es="Recuperación" data-en="Retrieval">Recuperación</text>
+                  <text class="d-sub" x="495" y="70" text-anchor="middle" data-es="base de conocimiento" data-en="knowledge base">base de conocimiento</text>
+                  <rect class="d-box-violet" x="420" y="120" width="150" height="70" rx="6"/>
+                  <text class="d-label" x="495" y="150" text-anchor="middle">LLM</text>
+                  <text class="d-sub" x="495" y="170" text-anchor="middle">Amazon Bedrock</text>
+                  <rect class="d-box" x="630" y="70" width="120" height="70" rx="6"/>
+                  <text class="d-label" x="690" y="100" text-anchor="middle" data-es="Respuesta" data-en="Answer">Respuesta</text>
+                  <text class="d-sub" x="690" y="120" text-anchor="middle" data-es="en menos de 8 s" data-en="in under 8 s">en menos de 8 s</text>
+                  <path class="d-arrow" d="M140 105h66"/>
+                  <path class="d-arrow" d="M350 95 416 60"/>
+                  <path class="d-arrow" d="M350 115 416 150"/>
+                  <path class="d-arrow" d="M570 60 626 95"/>
+                  <path class="d-arrow" d="M570 150 626 115"/>
+                  <rect class="d-band" x="10" y="220" width="740" height="64" rx="6"/>
+                  <text class="d-band-label" x="30" y="246" data-es="CONTROLES TRANSVERSALES" data-en="CROSS-CUTTING CONTROLS">CONTROLES TRANSVERSALES</text>
+                  <text class="d-sub" x="30" y="268" data-es="supervisión humana · trazabilidad · observabilidad · costos · LOPDP · ISO/IEC 42001" data-en="human oversight · traceability · observability · cost · data protection · ISO/IEC 42001">supervisión humana · trazabilidad · observabilidad · costos · LOPDP · ISO/IEC 42001</text>
+                  <path class="d-arrow-dim" d="M280 140v76M495 190v26"/>
+                </svg>
+                <figcaption data-es="Vista conceptual. Los detalles de implementación son confidenciales." data-en="Conceptual view. Implementation details are confidential.">Vista conceptual. Los detalles de implementación son confidenciales.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="section-wrap prose">
+            <h2 data-es="Mi rol" data-en="My role">Mi rol</h2>
+            <div class="prose-body">
+              <p data-es="Fui el <strong>arquitecto y líder técnico</strong> de un equipo multidisciplinario de 10 personas. Diseñé, controlé y dirigí el producto de punta a punta:" data-en="I was the <strong>architect and technical lead</strong> of a 10-person cross-functional team. I designed, controlled, and directed the product end to end:">Fui el <strong>arquitecto y líder técnico</strong> de un equipo multidisciplinario de 10 personas. Diseñé, controlé y dirigí el producto de punta a punta:</p>
+              <ul>
+                <li data-es="Arquitectura e infraestructura, desde el MVP hasta el dimensionamiento productivo." data-en="Architecture and infrastructure, from MVP to production sizing.">Arquitectura e infraestructura, desde el MVP hasta el dimensionamiento productivo.</li>
+                <li data-es="Aseguramiento y controles alineados con la LOPDP del Ecuador y la ISO/IEC 42001: supervisión humana y trazabilidad." data-en="Assurance and controls aligned with Ecuador's data protection law and ISO/IEC 42001: human oversight and traceability.">Aseguramiento y controles alineados con la LOPDP del Ecuador y la ISO/IEC 42001: supervisión humana y trazabilidad.</li>
+                <li data-es="Gobierno del producto: métricas, observabilidad, operación y costos." data-en="Product governance: metrics, observability, operations, and cost.">Gobierno del producto: métricas, observabilidad, operación y costos.</li>
+                <li data-es="Apoyo a la estrategia y presentación de resultados ante la alta gerencia." data-en="Supporting the strategy and presenting results to senior management.">Apoyo a la estrategia y presentación de resultados ante la alta gerencia.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="section-wrap prose">
+            <h2 data-es="Resultado" data-en="Outcome">Resultado</h2>
+            <div class="prose-body">
+              <p data-es="El personal de <strong>200 agencias</strong> encuentra la respuesta en <strong>menos de 8 segundos</strong>. Más de 5.000 usuarios activos, más de 200.000 preguntas atendidas y 80 % de satisfacción." data-en="Staff across <strong>200 branches</strong> find the answer in <strong>under 8 seconds</strong>. More than 5,000 active users, 200,000+ questions answered, and 80% satisfaction.">El personal de <strong>200 agencias</strong> encuentra la respuesta en <strong>menos de 8 segundos</strong>. Más de 5.000 usuarios activos, más de 200.000 preguntas atendidas y 80 % de satisfacción.</p>
+              <p class="role-award"><span aria-hidden="true">✳</span><span data-es="Digital Innovation Award 2026 de FELABAN — Innovación con IA, 1.er lugar en Latinoamérica" data-en="FELABAN Digital Innovation Award 2026 — Innovation with AI, 1st place in Latin America">Digital Innovation Award 2026 de FELABAN — Innovación con IA, 1.er lugar en Latinoamérica</span></p>
+              <p><a class="inline-link" href="trayectoria.html#banco-pichincha" data-es="Ver el resto del rol en la trayectoria →" data-en="See the rest of the role in the track record →">Ver el resto del rol en la trayectoria →</a></p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer section-wrap">
+        <a class="wordmark footer-mark" href="./"><span class="wordmark-mark">a<span>.</span>s</span></a>
+        <p>© <span class="year"></span> Alexander Saravia <span class="footer-sep">/</span> <span data-es="Hecho con intención y unas cuantas líneas de código." data-en="Made with intention and a few lines of code.">Hecho con intención y unas cuantas líneas de código.</span></p>
+        <div class="footer-links"><a href="./" data-es="Inicio" data-en="Home">Inicio</a><a href="trayectoria.html" data-es="Trayectoria" data-en="Track record">Trayectoria</a><a href="https://github.com/basaravia" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/asaravia/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      </footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

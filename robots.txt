@@ -1,0 +1,16 @@
+# Las fotos no se usan para entrenar modelos de IA.
+User-agent: GPTBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Bytespider
+User-agent: meta-externalagent
+User-agent: Applebot-Extended
+User-agent: cohere-training-data-crawler
+Disallow: /assets/img/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aisaravia.online/sitemap.xml
