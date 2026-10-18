@@ -530,3 +530,77 @@ h2 em { color: var(--mint); font-style: normal; }
 .file-glyph svg { width: 13px; height: 13px; vertical-align: -2px; }
 .role-award svg { width: 18px; height: 18px; flex: none; color: var(--violet); }
 .orbit-spark { position: absolute; top: 50%; left: 50%; width: 34px; height: 34px; color: var(--mint); transform: translate(-50%, -50%); }
+
+/* ================================================================
+   Movimiento y microinteracciones
+   Tokens: hover ~150 ms, transiciones ~300 ms, escala máxima 3 %.
+   Todo se desactiva con prefers-reduced-motion y los hovers solo
+   existen en dispositivos con puntero fino (no en pantallas táctiles).
+   ================================================================ */
+:root { --dur-fast: 160ms; --dur: 320ms; --ease: cubic-bezier(.2, .7, .2, 1); }
+
+/* Ritmo de lectura: líneas de 60–70 caracteres */
+.hero-intro, .about-story p, .feature-main p, .prose-body, .lead { max-width: 64ch; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Transiciones entre páginas (View Transitions entre documentos) */
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: vt-out var(--dur) var(--ease) both; }
+  ::view-transition-new(root) { animation: vt-in var(--dur) var(--ease) both; }
+  .topbar { view-transition-name: topbar; }
+  /* Morph: el título de la tarjeta del caso se transforma en el título de su página */
+  .case-title { view-transition-name: case-title; }
+  ::view-transition-group(case-title) { animation-duration: 450ms; animation-timing-function: var(--ease); }
+
+  /* Entrada del inicio: los elementos aparecen escalonados */
+  .hero-identity, .hero h1, .hero-intro, .hero-actions, .hero-proof, .editor-card { animation: rise .7s var(--ease) both; }
+  .hero h1 { animation-delay: .08s; }
+  .hero-intro { animation-delay: .16s; }
+  .hero-actions { animation-delay: .24s; }
+  .hero-proof { animation-delay: .32s; }
+  .editor-card { animation-delay: .28s; }
+}
+@keyframes vt-out { to { opacity: 0; translate: 0 -8px; } }
+@keyframes vt-in { from { opacity: 0; translate: 0 12px; } }
+@keyframes rise { from { opacity: 0; translate: 0 18px; } }
+
+/* Tarjetas: halo que sigue al cursor (las coordenadas las pone app.js) */
+.spotlight { position: relative; }
+.spotlight::before { position: absolute; inset: 0; z-index: 1; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), #a3f7ce17, transparent 70%); content: ""; opacity: 0; pointer-events: none; transition: opacity var(--dur) var(--ease); }
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight:hover::before { opacity: 1; }
+  .work-card, .lab-card, .talk-card, .info-card, .note-card, .gallery-item { transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+  .work-card:hover, .lab-card:hover, .talk-card:hover, .info-card:hover, .note-card:hover { transform: translateY(-4px); border-color: #3f5a51; box-shadow: 0 18px 40px #0007; }
+
+  /* Botón principal: un brillo cruza al pasar el cursor */
+  .button-primary { position: relative; overflow: hidden; }
+  .button-primary::after { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, #ffffff8c 50%, transparent 70%); content: ""; translate: -120% 0; transition: translate .6s var(--ease); }
+  .button-primary:hover::after { translate: 120% 0; }
+
+  /* Flechas que avanzan con el hover */
+  a .ico-arrow, a .ico-external, button .ico-arrow { transition: translate var(--dur-fast) var(--ease); }
+  a:hover .ico-arrow { translate: 4px 0; }
+  a:hover .ico-external { translate: 2px -2px; }
+
+  /* Enlaces con subrayado que crece */
+  .inline-link, .role-link, .talk-link, .info-card a.more, .card-more { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size var(--dur) var(--ease), color var(--dur-fast); }
+  .inline-link:hover, .role-link:hover, .talk-link:hover, .info-card a.more:hover, .work-card:hover .card-more { background-size: 100% 1px; }
+
+  /* Galería: la foto se acerca dentro de su marco */
+  .gallery-item img { transition: scale .6s var(--ease), filter .6s var(--ease); filter: saturate(.9); }
+  .gallery-item:hover img { scale: 1.03; filter: saturate(1.05); }
+  .gallery-item:hover { border-color: #3f5a51; }
+
+  /* Logos del toolkit y retrato */
+  .tech-list li:hover { transform: translateY(-2px); }
+  .tech-list li { transition: transform var(--dur-fast) var(--ease), border-color var(--dur-fast), color var(--dur-fast); }
+  .hero-portrait { transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+  .hero-portrait:hover { transform: rotate(-1.5deg) scale(1.02); box-shadow: 0 22px 60px #0009, 0 0 50px #a3f7ce33; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spotlight::before, .button-primary::after { display: none; }
+}
+.hero-role { color: var(--mint) !important; white-space: nowrap; }
+.hero-location { margin: 4px 0 0; color: var(--muted); font: 11px var(--mono); letter-spacing: .04em; }
+@media (max-width: 520px) { .hero-role { white-space: normal; } }

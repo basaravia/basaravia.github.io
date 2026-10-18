@@ -132,6 +132,19 @@ document.querySelectorAll(".year").forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
 
+// Halo que sigue al cursor en las tarjetas (solo con mouse; en pantallas táctiles no hay hover).
+if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  const cards = ".feature-card, .work-card, .lab-card, .talk-card, .info-card, .note-card, .stack-card";
+  document.addEventListener("pointermove", (event) => {
+    const card = event.target.closest?.(cards);
+    if (!card) return;
+    card.classList.add("spotlight");
+    const box = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${event.clientX - box.left}px`);
+    card.style.setProperty("--my", `${event.clientY - box.top}px`);
+  }, { passive: true });
+}
+
 // Las fotos se publican con marca de agua; esto solo evita el "guardar imagen" casual.
 document.addEventListener("contextmenu", (event) => {
   if (event.target.closest(".gallery-item, .protected-media")) event.preventDefault();
