@@ -29,7 +29,7 @@ window.SITE_CONTENT = {
     foto("assets/img/eventos/2021-03-reconocimiento-emprendimiento-espe.webp", "evento", "2021-03", "Reconocimiento a emprendimiento innovador", "Award for innovative entrepreneurship", "ESPE", true),
     foto("assets/img/proyectos/2021-05-laboratorio-edge-ai.webp", "proyecto", "2021-05", "Laboratorio de Edge AI: Jetson y visión 3D", "Edge AI lab: Jetson and 3D vision"),
     foto("assets/img/proyectos/2021-10-prueba-campo-realsense.webp", "proyecto", "2021-10", "Prueba de campo con visión 3D", "Field test with 3D vision", "Intel RealSense"),
-    foto("assets/img/charlas/2022-05-nuo-charla.webp", "charla", "2022-05", "Charla de innovación", "Innovation talk", "NUO", true),
+    foto("assets/img/charlas/2022-05-nuo-charla.webp", "pitch", "2022-05", "Pitch finalista del concurso de innovación", "Innovation contest finalist pitch", "NUO · top 4 de 265 ideas", true),
     foto("assets/img/clases/2022-07-clase-iot-en-linea.webp", "clase", "2022-07", "Clase en línea de IoT", "Online IoT class"),
     foto("assets/img/charlas/2023-02-epn-camino-ciencia-datos.webp", "charla", "2023-02", "Camino hacia la ciencia de datos", "The path to data science", "", true),
     foto("assets/img/eventos/2023-04-open-data-day-panel.webp", "evento", "2023-04", "Panel: la IA y los datos en Ecuador", "Panel: AI and data in Ecuador", "Open Data Day UIO 2023 · EPN", true),

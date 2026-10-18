@@ -33,6 +33,7 @@ const galleryLabels = {
   charla: { es: "Charla", en: "Talk" },
   clase: { es: "Clase", en: "Class" },
   evento: { es: "Evento", en: "Event" },
+  pitch: { es: "Pitch", en: "Pitch" },
   proyecto: { es: "Proyecto", en: "Project" },
   personal: { es: "Fuera del código", en: "Off the clock" },
 };
