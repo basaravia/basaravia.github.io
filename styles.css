@@ -239,10 +239,60 @@ h2 em { color: var(--mint); font-style: normal; }
 /* Capa transparente sobre la foto: "guardar imagen" y arrastrar apuntan a la capa, no a la foto. */
 .gallery-item::after { position: absolute; inset: 0 0 auto; aspect-ratio: 4 / 3; content: ""; }
 .timeline-lead { margin: -18px 0 36px !important; }
-.timeline-photos { display: grid; gap: 34px; }
-.timeline-year { display: grid; grid-template-columns: 90px 1fr; gap: 24px; }
-.timeline-year-label { position: sticky; top: 20px; align-self: start; margin: 0; color: var(--mint); font: 500 24px var(--mono); letter-spacing: -.04em; }
-@media (max-width: 680px) { .timeline-year { grid-template-columns: 1fr; gap: 12px; } .timeline-year-label { position: static; } }
+.timeline-photos { position: relative; display: grid; gap: 56px; padding-left: 28px; }
+/* Riel del tiempo: una línea tenue y, encima, la parte "recorrida" que se ilumina con el scroll. */
+.timeline-photos::before, .timeline-photos::after { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; border-radius: 2px; content: ""; }
+.timeline-photos::before { background: linear-gradient(var(--line-bright), var(--line-bright)); }
+.timeline-photos::after { background: linear-gradient(var(--violet), var(--mint)); box-shadow: 0 0 14px #a3f7ce80; transform-origin: top; }
+.timeline-year { position: relative; display: grid; grid-template-columns: 120px 1fr; gap: 28px; }
+.timeline-year::before { position: absolute; top: 12px; left: -34px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 2px var(--mint), 0 0 16px #a3f7ce99; content: ""; }
+.timeline-year-label { position: sticky; top: 24px; align-self: start; display: flex; flex-direction: column; gap: 2px; margin: 0; background: linear-gradient(120deg, var(--mint), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; font: 600 40px/1 var(--mono); letter-spacing: -.06em; }
+.timeline-year-label small { color: var(--muted); -webkit-text-fill-color: var(--muted); font: 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+
+/* Portal de entrada: anillos concéntricos que se abren al acercarse */
+.time-portal { position: relative; display: grid; height: 240px; margin: 0 0 40px; place-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: radial-gradient(circle at 50% 50%, #b9a4ff1f, transparent 60%), #070a0e; }
+.portal-rings { position: absolute; inset: 0; display: grid; place-items: center; }
+.portal-rings span { position: absolute; width: 120px; aspect-ratio: 1; border: 1px solid #a3f7ce55; border-radius: 50%; box-shadow: 0 0 24px #a3f7ce22, inset 0 0 24px #b9a4ff22; }
+.portal-rings span:nth-child(2) { width: 220px; border-color: #b9a4ff55; border-style: dashed; }
+.portal-rings span:nth-child(3) { width: 340px; border-color: #a3f7ce33; }
+.portal-rings span:nth-child(4) { width: 480px; border-color: #b9a4ff26; border-style: dotted; }
+.portal-readout { position: relative; display: flex; align-items: center; gap: 14px; margin: 0; color: var(--text); font: 500 28px var(--mono); letter-spacing: -.04em; }
+.portal-readout i { width: 90px; height: 2px; background: linear-gradient(90deg, var(--violet), var(--mint)); box-shadow: 0 0 12px #a3f7ce99; }
+.portal-readout span:last-child { color: var(--mint); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .portal-rings span { animation: portal-spin 40s linear infinite; }
+  .portal-rings span:nth-child(even) { animation-direction: reverse; animation-duration: 60s; }
+
+  @supports (animation-timeline: view()) {
+    /* Al acercarse, el portal se abre: los anillos crecen y la lectura se enciende. */
+    .portal-rings { animation: portal-open linear both; animation-timeline: view(); animation-range: entry 10% cover 60%; }
+    /* La parte iluminada del riel avanza con el scroll de la línea de tiempo. */
+    .timeline-photos::after { animation: rail-fill linear both; animation-timeline: view(); animation-range: entry 40% exit 60%; }
+    /* Cada año llega desde la profundidad, como saliendo del túnel. */
+    .timeline-year-label { animation: warp-in linear both; animation-timeline: view(); animation-range: entry 0% entry 90%; }
+    .gallery-item { animation: depth-in linear both; animation-timeline: view(); animation-range: entry 0% entry 80%; }
+  }
+}
+@keyframes portal-spin { to { transform: rotate(360deg); } }
+@keyframes portal-open { from { transform: scale(.55); opacity: .3; } to { transform: scale(1.25); opacity: 1; } }
+@keyframes rail-fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes warp-in { from { transform: scale(1.8) translateY(-14px); opacity: 0; letter-spacing: .3em; } to { transform: none; opacity: 1; } }
+@keyframes depth-in { from { transform: perspective(900px) translateZ(-260px) rotateX(10deg); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Respaldo con IntersectionObserver (lo activa app.js solo si el navegador no soporta view()). */
+.motion-fallback .timeline-year-label, .motion-fallback .gallery-item { opacity: 0; transform: perspective(900px) translateZ(-200px); transition: transform .8s cubic-bezier(.2, .7, .2, 1), opacity .8s ease; }
+.motion-fallback .is-visible { opacity: 1; transform: none; }
+
+@media (max-width: 680px) {
+  .timeline-photos { padding-left: 20px; gap: 40px; }
+  .timeline-year { grid-template-columns: 1fr; gap: 12px; }
+  .timeline-year::before { left: -26px; top: 8px; width: 12px; height: 12px; }
+  .timeline-year-label { position: static; flex-direction: row; align-items: baseline; gap: 12px; font-size: 32px; }
+  .time-portal { height: 180px; }
+  .portal-readout { font-size: 22px; }
+  .portal-readout i { width: 50px; }
+}
 .gallery-item img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
 .gallery-item figcaption { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 14px; font-size: 13px; }
 .gallery-item figcaption span { color: var(--muted); font-size: 12px; }

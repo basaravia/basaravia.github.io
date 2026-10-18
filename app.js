@@ -60,12 +60,36 @@ function renderGallery() {
     }
     // Línea de tiempo: un bloque por año, del más antiguo al más reciente.
     const years = [...new Set(items.map((item) => item.fecha.slice(0, 4)))];
+    const now = new Date().getFullYear();
+    const ago = (year) => {
+      const n = now - Number(year);
+      if (n === 0) return language === "es" ? "este año" : "this year";
+      return language === "es" ? `hace ${n} ${n === 1 ? "año" : "años"}` : `${n} ${n === 1 ? "year" : "years"} ago`;
+    };
     container.innerHTML = years.map((year) => `
       <section class="timeline-year">
-        <h3 class="timeline-year-label">${year}</h3>
+        <h3 class="timeline-year-label">${year}<small>${ago(year)}</small></h3>
         <div class="gallery-grid">${items.filter((item) => item.fecha.startsWith(year)).map(galleryItem).join("")}</div>
       </section>`).join("");
+    observeTimeline(container);
   });
+}
+
+// Respaldo del efecto "portal" para navegadores sin animaciones ligadas al scroll (CSS view()).
+const supportsScrollTimeline = CSS.supports?.("animation-timeline: view()");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+function observeTimeline(container) {
+  if (supportsScrollTimeline || reducedMotion.matches || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("motion-fallback");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -12% 0px" });
+  container.querySelectorAll(".timeline-year-label, .gallery-item").forEach((element) => observer.observe(element));
 }
 
 function renderNotes() {
