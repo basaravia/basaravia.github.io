@@ -25,6 +25,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 ROOT = Path(__file__).resolve().parent.parent
 IMG = ROOT / "assets" / "img"
 MAX_SIDE = 1600
+PORTRAIT_SIDE = 800  # un retrato en alta resolución es materia prima para deepfakes
 WATERMARK = "aisaravia.online"
 KINDS = {"charlas", "clases", "eventos", "blog", "proyectos", "retrato"}
 
@@ -118,6 +119,8 @@ def main():
     if target not in approved():
         sys.exit(f"'{target}' no está en assets/img/aprobadas.txt. Revisa la foto con el guardián y apruébala primero.")
 
+    if target.startswith("retrato/"):
+        image.thumbnail((PORTRAIT_SIDE, PORTRAIT_SIDE))
     watermark(image)
     output = IMG / target
     output.parent.mkdir(parents=True, exist_ok=True)

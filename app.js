@@ -80,7 +80,7 @@ function renderNotes() {
         <span class="note-meta">${escapeHtml(formatDate(note.fecha))}${note.etiquetas?.length ? ` · ${note.etiquetas.map(escapeHtml).join(" · ")}` : ""}</span>
         <h3>${escapeHtml(note.titulo?.[language] ?? "")}</h3>
         <p>${escapeHtml(note.resumen?.[language] ?? "")}</p>
-        <span class="note-more">${language === "es" ? "Leer nota" : "Read note"} <span aria-hidden="true">→</span></span>
+        <span class="note-more">${language === "es" ? "Leer nota" : "Read note"} <i class='ico ico-arrow' aria-hidden='true'></i></span>
       </a>`).join("");
     const empty = container.parentElement.querySelector(".notes-empty");
     if (empty) empty.hidden = notes.length > 0;
@@ -176,12 +176,12 @@ if (terminal) {
       en: "Off the clock: XC and off-road. Same rule as architecture: read the terrain before you accelerate.",
     },
     playlist: {
-      es: "Ahora sonando: metal. Ideal para depurar a 200 bpm. 🤘",
-      en: "Now playing: metal. Ideal for debugging at 200 bpm. 🤘",
+      es: "Ahora sonando: metal. Ideal para depurar a 200 bpm.",
+      en: "Now playing: metal. Ideal for debugging at 200 bpm.",
     },
     coffee: {
-      es: "Compilando café... ██████████ 100%. Ahora sí, ¿qué vamos a construir?",
-      en: "Compiling coffee... ██████████ 100%. Now, what shall we build?",
+      es: "Compilando café... [##########] 100%. Ahora sí, ¿qué vamos a construir?",
+      en: "Compiling coffee... [##########] 100%. Now, what shall we build?",
     },
     "sudo make me a sandwich": {
       es: "Hecho. Pero ahora tú eliges el siguiente problema interesante.",
@@ -195,7 +195,7 @@ if (terminal) {
     if (!command) return;
     const prompt = document.createElement("p");
     prompt.className = "terminal-line";
-    prompt.textContent = `➜ ${command}`;
+    prompt.textContent = `> ${command}`;
     terminalOutput.append(prompt);
     const result = document.createElement("p");
     result.className = "terminal-result";
@@ -216,8 +216,8 @@ document.addEventListener("keydown", (event) => {
   if (keySequence.length === easterEggSequence.length
       && keySequence.every((key, index) => key.toLowerCase() === easterEggSequence[index].toLowerCase())) {
     showToast(language === "es"
-      ? "Easter egg desbloqueado: que la curiosidad te acompañe. ✳"
-      : "Easter egg unlocked: may curiosity be with you. ✳");
+      ? "Easter egg desbloqueado: que la curiosidad te acompañe."
+      : "Easter egg unlocked: may curiosity be with you.");
     keySequence = [];
   }
 });

@@ -58,6 +58,13 @@ svg use { fill: currentColor; }
 .hero-copy { position: relative; z-index: 1; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--muted); font-size: 11px; letter-spacing: .04em; }
 .eyebrow-line { display: inline-block; width: 23px; height: 1px; background: var(--mint); }
+.hero-identity { display: flex; align-items: center; gap: 18px; }
+.hero-portrait { position: relative; display: block; width: 96px; height: 96px; flex: none; padding: 3px; border-radius: 50%; background: conic-gradient(from 210deg, var(--mint), var(--violet), var(--mint)); box-shadow: 0 0 36px #a3f7ce26; }
+.hero-portrait img { width: 100%; height: 100%; border: 3px solid var(--bg); border-radius: 50%; object-fit: cover; object-position: 40% 35%; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
+/* Capa transparente: "guardar imagen" y arrastrar apuntan a la capa, no al retrato. */
+.hero-portrait::after { position: absolute; inset: 0; border-radius: 50%; content: ""; }
+.hero-name { margin: 0 0 6px; font-size: 21px; font-weight: 700; letter-spacing: -.03em; }
+.hero-identity + h1 { margin-top: 30px; }
 h1, h2, h3, p { margin-top: 0; }
 h1 { max-width: 640px; margin: 25px 0 21px; font-size: clamp(40px, 5.4vw, 64px); font-weight: 600; letter-spacing: -.065em; line-height: 1.13; }
 .headline-accent { color: var(--mint); }
@@ -288,7 +295,7 @@ h2 em { color: var(--mint); font-style: normal; }
 .contact-orbit span { position: absolute; inset: 24px; border: 1px dashed #a3f7ce28; border-radius: 50%; }
 .contact-orbit span:nth-child(2) { inset: 55px; border-style: solid; }
 .contact-orbit span:nth-child(3) { inset: -20px 80px; border-color: #b9a4ff38; }
-.contact-orbit i { position: absolute; top: 50%; left: 50%; color: var(--mint); font-size: 30px; font-style: normal; transform: translate(-50%, -50%); }
+
 
 /* Pie */
 .footer { display: flex; min-height: 90px; align-items: center; justify-content: space-between; gap: 20px; }
@@ -415,6 +422,9 @@ h2 em { color: var(--mint); font-style: normal; }
   .main-nav { gap: 16px; font-size: 11px; }
   .top-actions { gap: 10px; }
   .hero { min-height: auto; gap: 34px; padding-top: 48px; padding-bottom: 64px; }
+  .hero-portrait { width: 76px; height: 76px; }
+  .hero-name { font-size: 18px; }
+  .hero-identity .eyebrow { font-size: 10px; }
   h1 { font-size: clamp(36px, 10vw, 52px); }
   .hero-intro { font-size: 15px; }
   .editor-body { min-height: 300px; padding-top: 19px; grid-template-columns: 34px 1fr; }
@@ -455,3 +465,13 @@ h2 em { color: var(--mint); font-style: normal; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Iconos de interfaz (sin emojis ni símbolos de texto) */
+.ico { display: inline-block; width: 1em; height: 1em; flex: none; vertical-align: -.14em; background: currentColor; -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+.ico-arrow { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E"); }
+.ico-external { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E"); }
+.ico-up { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5M6 11l6-6 6 6'/%3E%3C/svg%3E"); }
+.ico-back { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E"); }
+.file-glyph svg { width: 13px; height: 13px; vertical-align: -2px; }
+.role-award svg { width: 18px; height: 18px; flex: none; color: var(--violet); }
+.orbit-spark { position: absolute; top: 50%; left: 50%; width: 34px; height: 34px; color: var(--mint); transform: translate(-50%, -50%); }

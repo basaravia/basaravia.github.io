@@ -35,3 +35,5 @@ eventos/2026-04-google-evento.webp
 charlas/2026-08-python-quito-ciberseguridad-agentica.webp
 charlas/2026-08-python-quito-ponentes.webp
 eventos/2026-08-python-quito-grupal.webp
+# Retrato del inicio (pedido por Alexander el 2026-10-18):
+retrato/alexander-saravia.webp
