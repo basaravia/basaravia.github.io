@@ -403,7 +403,7 @@ h2 em { color: var(--mint); font-style: normal; }
 .cert-list small { margin-left: auto; color: var(--quiet); font: 11px var(--mono); white-space: nowrap; }
 
 /* Caso de estudio */
-.case-stats { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 44px; border: 1px solid var(--line-bright); border-radius: 4px; }
+.case-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 44px; border: 1px solid var(--line-bright); border-radius: 4px; }
 .case-stats div { display: flex; flex-direction: column; gap: 2px; padding: 20px; border-left: 1px solid var(--line-bright); }
 .case-stats div:first-child { border-left: 0; }
 .case-stats strong { color: var(--mint); font: 500 30px/1.2 var(--mono); letter-spacing: -.05em; }
@@ -514,7 +514,6 @@ h2 em { color: var(--mint); font-style: normal; }
   .case-stats div { border-left: 0 !important; border-top: 1px solid var(--line-bright); }
   .case-stats div:first-child, .case-stats div:nth-child(2) { border-top: 0; }
   .case-stats div:nth-child(even) { border-left: 1px solid var(--line-bright) !important; }
-  .case-stats div:last-child { grid-column: 1 / -1; }
   .diagram { padding: 14px; overflow-x: auto; }
   .diagram svg { min-width: 600px; }
   .diagram figcaption::before { content: "Desliza para ver el diagrama completo · "; }
@@ -651,3 +650,6 @@ h2 em { color: var(--mint); font-style: normal; }
   .timeline-year .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .timeline-year .gallery-item figcaption { padding: 10px 12px 12px; font-size: 12.5px; }
 }
+
+.stat-word strong { font-size: 22px !important; letter-spacing: -.03em !important; }
+.case-source { margin: 14px 0 0; color: var(--quiet); font: 11px var(--mono); }
