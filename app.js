@@ -227,8 +227,8 @@ if (terminal) {
       en: "Now playing: metal. Ideal for debugging at 200 bpm.",
     },
     coffee: {
-      es: "Compilando café... [##########] 100%. Ahora sí, ¿qué vamos a construir?",
-      en: "Compiling coffee... [##########] 100%. Now, what shall we build?",
+      es: "Compilando café... [##########] 100%. Café listo. De vuelta al código.",
+      en: "Compiling coffee... [##########] 100%. Coffee ready. Back to the code.",
     },
     "sudo make me a sandwich": {
       es: "Hecho. Pero ahora tú eliges el siguiente problema interesante.",
