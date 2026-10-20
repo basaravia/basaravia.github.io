@@ -44,7 +44,7 @@ window.SITE_CONTENT = {
     foto("assets/img/clases/2024-03-kruger-open-lab.webp", "clase", "2024-03", "Open Lab: demo de embeddings", "Open Lab: embeddings demo", "Kruger · Open Lab", true),
     foto("assets/img/eventos/2024-06-comunidad-camisetas.webp", "evento", "2024-06", "Comunidad de IA", "AI community"),
     foto("assets/img/eventos/2024-07-gen-ai-day.webp", "evento", "2024-07", "Gen AI Day", "Gen AI Day", "Banco Pichincha · AWS"),
-    foto("assets/img/charlas/2024-07-gen-ai-day-escenario.webp", "charla", "2024-07", "Demo en vivo en el Gen AI Day", "Live demo at Gen AI Day", "Banco Pichincha · AWS", true),
+    foto("assets/img/charlas/2024-07-gen-ai-day-escenario.webp", "charla", "2024-07", "Ponente: avances del equipo de IA generativa", "Speaker: progress of the generative AI team", "Banco Pichincha · AWS", true),
     foto("assets/img/eventos/2024-09-dama-ecuador.webp", "evento", "2024-09", "Comunidad de gobierno de datos", "Data governance community", "DAMA Ecuador", true),
     foto("assets/img/eventos/2024-12-entrega-certificados.webp", "evento", "2024-12", "Entrega de certificados", "Certificate ceremony"),
     foto("assets/img/eventos/2024-12-reconocimiento-trofeos.webp", "evento", "2024-12", "Reconocimiento a voluntarios", "Volunteer recognition"),
