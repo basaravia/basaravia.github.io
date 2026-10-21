@@ -94,6 +94,10 @@ h1 { max-width: 640px; margin: 25px 0 21px; font-size: clamp(40px, 5.4vw, 64px);
 .proof-award svg { width: 18px; height: 18px; }
 .hero-proof p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .hero-proof strong { color: #e0e6e7; font-weight: 400; }
+.proof-badge-imgs { display: flex; flex: none; gap: 2px; }
+.proof-badge-imgs img { display: block; width: 44px; height: 44px; }
+.hero-proof strong a { color: inherit; }
+.hero-proof strong a:hover { color: var(--mint); }
 
 .editor-card { position: relative; z-index: 1; overflow: hidden; border: 1px solid #26323c; border-radius: 7px; background: #0b1016ed; box-shadow: 0 28px 90px #0008, 0 0 60px #a3f7ce0a; transform: perspective(1200px) rotateY(-3deg) rotateX(1deg); }
 .editor-titlebar { position: relative; display: flex; height: 42px; align-items: center; padding: 0 14px; border-bottom: 1px solid #1b242d; background: #10161e; color: var(--quiet); font-size: 11px; }
@@ -401,6 +405,15 @@ h2 em { color: var(--mint); font-style: normal; }
 .cert-list li svg, .cert-list .mono-badge { width: 22px; height: 22px; flex: none; color: #9fb0b8; }
 .cert-list .mono-badge { height: 18px; }
 .cert-list small { margin-left: auto; color: var(--quiet); font: 11px var(--mono); white-space: nowrap; }
+.cert-featured { display: flex; align-items: center; gap: 28px; margin: 0 0 28px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cert-badges { display: flex; flex: none; gap: 8px; }
+.cert-featured img { width: 128px; height: 128px; flex: none; }
+.cert-kicker { margin: 0 0 6px !important; color: var(--mint) !important; font: 12px var(--mono) !important; letter-spacing: .04em; text-transform: uppercase; }
+.cert-claim { color: var(--body) !important; font-size: 15px !important; }
+.cert-meta { font-size: 12.5px !important; }
+.cert-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 !important; }
+.cert-featured h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.cert-featured p { max-width: 56ch; margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 
 /* Caso de estudio */
 .case-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 44px; border: 1px solid var(--line-bright); border-radius: 4px; }
@@ -497,6 +510,8 @@ h2 em { color: var(--mint); font-style: normal; }
   .stat strong { font-size: 26px; }
   .feature-topline, .feature-bottom { padding-inline: 15px; }
   .work-grid, .lab-grid, .notes-grid, .talk-grid, .card-grid, .cert-list { grid-template-columns: 1fr; }
+  .cert-featured { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cert-badges img { width: 104px; height: 104px; }
   .talk-feature { grid-column: auto; }
   .work-card { min-height: auto; }
   .path-list { grid-template-columns: 1fr; }
