@@ -93,7 +93,7 @@ function depthTimeline(items, ago, yearsMarkup) {
   const icon = (path) => `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
   const cards = items.map((item, n) => `
       <figure class="dt-card protected-media" data-n="${n}">
-        <img src="${root}${escapeHtml(item.src)}" alt="${escapeHtml(item.alt?.[language] ?? "")}" loading="lazy" decoding="async" width="800" height="600" draggable="false">
+        <img src="${root}${escapeHtml(item.src)}" alt="${escapeHtml(item.alt?.[language] ?? "")}" loading="${n < 6 ? "eager" : "lazy"}" decoding="async" width="800" height="600" draggable="false">
         <figcaption><span class="gallery-kind">${escapeHtml(galleryLabels[item.tipo]?.[language] ?? item.tipo)}</span><strong>${escapeHtml(item.titulo?.[language] ?? "")}</strong></figcaption>
       </figure>`).join("");
   return `
