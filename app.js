@@ -72,14 +72,172 @@ function renderGallery() {
       if (n === 0) return language === "es" ? "este año" : "this year";
       return language === "es" ? `hace ${n} ${n === 1 ? "año" : "años"}` : `${n} ${n === 1 ? "year" : "years"} ago`;
     };
-    container.innerHTML = years.map((year) => `
+    const yearsMarkup = years.map((year) => `
       <section class="timeline-year">
         <h3 class="timeline-year-label">${year}<small>${ago(year)}</small></h3>
         <div class="gallery-grid">${items.filter((item) => item.fecha.startsWith(year)).map(galleryItem).join("")}</div>
       </section>`).join("");
+    container.innerHTML = depthTimeline(items, ago, yearsMarkup);
+    wireDepthTimeline(container, items);
     observeTimeline(container);
   });
 }
+
+// ===== Línea de tiempo en profundidad: las fotos se apilan en perspectiva y se avanza con flechas, arrastre o teclado =====
+const depthState = { kind: "all", index: 0, view: "stack" };
+
+function depthTimeline(items, ago, yearsMarkup) {
+  const es = language === "es";
+  const kinds = [...new Set(items.map((item) => item.tipo))];
+  const tab = (kind, label) => `<button type="button" role="tab" class="dt-tab" data-kind="${kind}">${escapeHtml(label)}</button>`;
+  const icon = (path) => `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+  const cards = items.map((item, n) => `
+      <figure class="dt-card protected-media" data-n="${n}">
+        <img src="${root}${escapeHtml(item.src)}" alt="${escapeHtml(item.alt?.[language] ?? "")}" loading="lazy" decoding="async" width="800" height="600" draggable="false">
+        <figcaption><span class="gallery-kind">${escapeHtml(galleryLabels[item.tipo]?.[language] ?? item.tipo)}</span><strong>${escapeHtml(item.titulo?.[language] ?? "")}</strong></figcaption>
+      </figure>`).join("");
+  return `
+    <div class="dt" data-view="${depthState.view}">
+      <div class="dt-bar">
+        <div class="dt-tabs" role="tablist" aria-label="${es ? "Filtrar por tipo" : "Filter by type"}">
+          ${tab("all", es ? "Todo" : "All")}${kinds.map((kind) => tab(kind, galleryLabels[kind]?.[language] ?? kind)).join("")}
+        </div>
+        <div class="dt-views" role="group" aria-label="${es ? "Vista" : "View"}">
+          <button type="button" data-view="stack" aria-label="${es ? "Vista en profundidad" : "Depth view"}">${icon('<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/>')}</button>
+          <button type="button" data-view="grid" aria-label="${es ? "Vista en cuadrícula" : "Grid view"}">${icon('<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>')}</button>
+        </div>
+      </div>
+      <div class="dt-stack">
+        <div class="dt-stage" tabindex="0" role="group" aria-roledescription="${es ? "carrusel" : "carousel"}" aria-label="${es ? "Fotos de la línea de tiempo. Usa las flechas del teclado." : "Timeline photos. Use the arrow keys."}">${cards}</div>
+        <div class="dt-meta">
+          <p class="dt-year"><span class="dt-year-num"></span><small class="dt-year-ago"></small></p>
+          <div class="dt-info" aria-live="polite"><span class="gallery-kind"></span><strong></strong><span class="dt-place"></span></div>
+          <div class="dt-nav">
+            <button type="button" class="dt-prev" aria-label="${es ? "Foto anterior" : "Previous photo"}">${icon('<path d="M15 5l-7 7 7 7"/>')}</button>
+            <span class="dt-count" aria-hidden="true"></span>
+            <button type="button" class="dt-next" aria-label="${es ? "Foto siguiente" : "Next photo"}">${icon('<path d="M9 5l7 7-7 7"/>')}</button>
+          </div>
+        </div>
+        <div class="dt-scrub" role="group" aria-label="${es ? "Ir a un año" : "Jump to a year"}"></div>
+      </div>
+      <div class="dt-grid timeline-photos">${yearsMarkup}</div>
+    </div>`;
+}
+
+function wireDepthTimeline(container, items) {
+  const scope = container.querySelector(".dt");
+  if (!scope) return;
+  const stage = scope.querySelector(".dt-stage");
+  const cards = [...stage.querySelectorAll(".dt-card")];
+  const scrub = scope.querySelector(".dt-scrub");
+  const es = language === "es";
+  const shown = () => depthState.kind === "all" ? items : items.filter((item) => item.tipo === depthState.kind);
+  const yearOf = (item) => item.fecha.slice(0, 4);
+
+  function go(index) {
+    const list = shown();
+    depthState.index = Math.min(Math.max(index, 0), list.length - 1);
+    paint();
+  }
+
+  function paint() {
+    const list = shown();
+    depthState.index = Math.min(Math.max(depthState.index, 0), Math.max(list.length - 1, 0));
+    const current = list[depthState.index];
+    cards.forEach((card, n) => {
+      const pos = list.indexOf(items[n]);
+      const offset = pos < 0 ? 9 : pos - depthState.index;
+      const far = Math.abs(offset) > 4;
+      card.style.setProperty("--o", Math.max(-5, Math.min(5, offset)));
+      card.style.setProperty("--ao", Math.min(Math.abs(offset), 5));
+      card.style.zIndex = 20 - Math.min(Math.abs(offset), 19);
+      card.dataset.hidden = far;
+      card.dataset.active = offset === 0;
+      card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+    });
+    scope.querySelectorAll(".dt-tab").forEach((tab) => {
+      const on = tab.dataset.kind === depthState.kind;
+      tab.setAttribute("aria-selected", on);
+      tab.tabIndex = on ? 0 : -1;
+    });
+    scope.querySelectorAll(".dt-views button").forEach((button) => button.setAttribute("aria-pressed", button.dataset.view === depthState.view));
+    if (!current) return;
+    const now = new Date().getFullYear();
+    const age = now - Number(yearOf(current));
+    scope.querySelector(".dt-year-num").textContent = yearOf(current);
+    scope.querySelector(".dt-year-ago").textContent = age === 0 ? (es ? "este año" : "this year") : es ? `hace ${age} ${age === 1 ? "año" : "años"}` : `${age} ${age === 1 ? "year" : "years"} ago`;
+    const info = scope.querySelector(".dt-info");
+    info.querySelector(".gallery-kind").textContent = `${galleryLabels[current.tipo]?.[language] ?? current.tipo} · ${formatDate(current.fecha)}`;
+    info.querySelector("strong").textContent = current.titulo?.[language] ?? "";
+    info.querySelector(".dt-place").textContent = current.lugar ?? "";
+    scope.querySelector(".dt-count").textContent = `${String(depthState.index + 1).padStart(2, "0")} / ${String(list.length).padStart(2, "0")}`;
+    scope.querySelector(".dt-prev").disabled = depthState.index === 0;
+    scope.querySelector(".dt-next").disabled = depthState.index === list.length - 1;
+    const years = [...new Set(list.map(yearOf))];
+    scrub.style.setProperty("--p", list.length > 1 ? depthState.index / (list.length - 1) : 1);
+    if (scrub.dataset.kind !== depthState.kind) {
+      scrub.dataset.kind = depthState.kind;
+      scrub.innerHTML = years.map((year) => `<button type="button" data-year="${year}">${year}</button>`).join("");
+    }
+    scrub.querySelectorAll("button").forEach((button) => button.setAttribute("aria-current", button.dataset.year === yearOf(current) ? "true" : "false"));
+  }
+
+  scope.querySelector(".dt-prev").addEventListener("click", () => go(depthState.index - 1));
+  scope.querySelector(".dt-next").addEventListener("click", () => go(depthState.index + 1));
+  scope.querySelector(".dt-tabs").addEventListener("click", (event) => {
+    const tab = event.target.closest(".dt-tab");
+    if (!tab) return;
+    depthState.kind = tab.dataset.kind;
+    depthState.index = 0;
+    paint();
+  });
+  scope.querySelector(".dt-views").addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+    depthState.view = button.dataset.view;
+    scope.dataset.view = depthState.view;
+    paint();
+  });
+  scrub.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (button) go(shown().findIndex((item) => yearOf(item) === button.dataset.year));
+  });
+  stage.addEventListener("keydown", (event) => {
+    const keys = { ArrowLeft: -1, ArrowUp: -1, ArrowRight: 1, ArrowDown: 1 };
+    if (event.key in keys) go(depthState.index + keys[event.key]);
+    else if (event.key === "Home") go(0);
+    else if (event.key === "End") go(shown().length - 1);
+    else return;
+    event.preventDefault();
+  });
+  // Arrastre horizontal (mouse o dedo); el scroll vertical de la página no se bloquea.
+  let startX = null;
+  stage.addEventListener("pointerdown", (event) => { startX = event.clientX; });
+  stage.addEventListener("pointerup", (event) => {
+    if (startX === null) return;
+    const delta = event.clientX - startX;
+    startX = null;
+    if (Math.abs(delta) > 40) { go(depthState.index + (delta < 0 ? 1 : -1)); return; }
+    const card = event.target.closest(".dt-card");
+    if (card && card.dataset.active !== "true") go(shown().indexOf(items[Number(card.dataset.n)]));
+  });
+  stage.addEventListener("pointercancel", () => { startX = null; });
+  paint();
+  // La entrada se dispara al ver la línea de tiempo; con poco movimiento o sin IntersectionObserver aparece ya armada.
+  const settle = () => window.setTimeout(() => scope.classList.add("is-settled"), 1400);
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    scope.classList.add("is-in", "is-settled");
+  } else {
+    const seen = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      scope.classList.add("is-in");
+      settle();
+      seen.disconnect();
+    }, { threshold: 0.3 });
+    seen.observe(stage);
+  }
+}
+
 
 // Respaldo del efecto "portal" para navegadores sin animaciones ligadas al scroll (CSS view()).
 // Igual que en styles.css: los efectos ligados al scroll solo corren en escritorio con mouse.
