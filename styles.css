@@ -774,3 +774,23 @@ h2 em { color: var(--mint); font-style: normal; }
   .dt-scrub { overflow-x: auto; }
   .dt-grid { padding-left: 20px; }
 }
+
+/* Ajuste de armonía: el adorno del portal repite el rango de años que ya muestra la barra de años. */
+.page-section:has(.dt) .time-portal { display: none; }
+.page-section:has(.dt) .timeline-lead { margin-bottom: 28px !important; }
+@media (max-width: 680px) {
+  /* Una sola fila de filtros que se desliza; los botones de vista quedan fijos a la derecha. */
+  .dt-bar { flex-wrap: nowrap; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; }
+  .dt-tabs { flex-wrap: nowrap; gap: 18px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+  .dt-tabs::-webkit-scrollbar { display: none; }
+  .dt-tab::after { bottom: -11px; }
+  .dt-views { flex-shrink: 0; }
+  /* Foto más pequeña para que se asomen las vecinas y se entienda que es una pila; el título va debajo. */
+  .dt-stage { height: clamp(190px, 54vw, 270px); perspective-origin: 50% 40%; }
+  .dt-card { top: 3%; width: 64%; }
+  .dt-card figcaption { display: none; }
+  .dt-meta { margin-top: 16px; }
+  .dt-year-num { font-size: 34px; }
+  .dt-info strong { font-size: 17px; }
+  .dt-scrub { margin-top: 16px; }
+}
